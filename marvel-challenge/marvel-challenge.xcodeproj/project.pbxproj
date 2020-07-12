@@ -47,6 +47,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D71246124BAAC1A0047D53B /* FavoritesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWorker.swift; sourceTree = "<group>"; };
+		1D71246224BAAC1A0047D53B /* FavoritesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesFactory.swift; sourceTree = "<group>"; };
+		1D71246324BAAC1A0047D53B /* FavoritesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRouter.swift; sourceTree = "<group>"; };
+		1D71246424BAAC1B0047D53B /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
+		1D71246524BAAC1B0047D53B /* FavoritesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesModels.swift; sourceTree = "<group>"; };
+		1D71246624BAAC1B0047D53B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		1D71246724BAAC1B0047D53B /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
+		1D71246824BAAC1B0047D53B /* FavoritesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInteractor.swift; sourceTree = "<group>"; };
 		1D76361F24BAA03C003F08B3 /* marvel-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "marvel-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D76362224BAA03C003F08B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D76362424BAA03C003F08B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +108,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D71246024BAAB8C0047D53B /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				1D76366424BAA6C1003F08B3 /* CharactersPresenter.swift */,
+				1D76367224BAA715003F08B3 /* CharactersFactory.swift */,
+				1D76366524BAA6C1003F08B3 /* CharactersWorker.swift */,
+				1D76366624BAA6C1003F08B3 /* CharactersRouter.swift */,
+				1D76366724BAA6C1003F08B3 /* CharactersModels.swift */,
+				1D76366824BAA6C1003F08B3 /* CharactersViewController.swift */,
+				1D76366924BAA6C1003F08B3 /* CharactersInteractor.swift */,
+				1D76367024BAA6CD003F08B3 /* CharactersViewController.xib */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
 		1D76361624BAA03C003F08B3 = {
 			isa = PBXGroup;
 			children = (
@@ -170,8 +193,9 @@
 		1D76365724BAA0CA003F08B3 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				1D71246024BAAB8C0047D53B /* Characters */,
 				1D76367624BAA76C003F08B3 /* MainTabBar */,
-				1D76367424BAA742003F08B3 /* Characters */,
+				1D76367424BAA742003F08B3 /* Favorites */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -214,19 +238,19 @@
 			path = RESTService;
 			sourceTree = "<group>";
 		};
-		1D76367424BAA742003F08B3 /* Characters */ = {
+		1D76367424BAA742003F08B3 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
-				1D76366424BAA6C1003F08B3 /* CharactersPresenter.swift */,
-				1D76367224BAA715003F08B3 /* CharactersFactory.swift */,
-				1D76366524BAA6C1003F08B3 /* CharactersWorker.swift */,
-				1D76366624BAA6C1003F08B3 /* CharactersRouter.swift */,
-				1D76366724BAA6C1003F08B3 /* CharactersModels.swift */,
-				1D76366824BAA6C1003F08B3 /* CharactersViewController.swift */,
-				1D76366924BAA6C1003F08B3 /* CharactersInteractor.swift */,
-				1D76367024BAA6CD003F08B3 /* CharactersViewController.xib */,
+				1D71246424BAAC1B0047D53B /* FavoritesPresenter.swift */,
+				1D71246224BAAC1A0047D53B /* FavoritesFactory.swift */,
+				1D71246124BAAC1A0047D53B /* FavoritesWorker.swift */,
+				1D71246324BAAC1A0047D53B /* FavoritesRouter.swift */,
+				1D71246524BAAC1B0047D53B /* FavoritesModels.swift */,
+				1D71246624BAAC1B0047D53B /* FavoritesViewController.swift */,
+				1D71246824BAAC1B0047D53B /* FavoritesInteractor.swift */,
+				1D71246724BAAC1B0047D53B /* FavoritesViewController.xib */,
 			);
-			path = Characters;
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 		1D76367524BAA763003F08B3 /* UI */ = {
