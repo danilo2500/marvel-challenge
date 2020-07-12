@@ -14,6 +14,9 @@
 		1D76363224BAA041003F08B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D76363024BAA041003F08B3 /* LaunchScreen.storyboard */; };
 		1D76363D24BAA042003F08B3 /* marvel_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D76363C24BAA042003F08B3 /* marvel_challengeTests.swift */; };
 		1D76364824BAA042003F08B3 /* marvel_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D76364724BAA042003F08B3 /* marvel_challengeUITests.swift */; };
+		1D76366124BAA350003F08B3 /* RESTRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D76365E24BAA350003F08B3 /* RESTRequest.swift */; };
+		1D76366224BAA350003F08B3 /* RESTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D76365F24BAA350003F08B3 /* RESTService.swift */; };
+		1D76366324BAA350003F08B3 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D76366024BAA350003F08B3 /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		1D76364324BAA042003F08B3 /* marvel-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "marvel-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D76364724BAA042003F08B3 /* marvel_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marvel_challengeUITests.swift; sourceTree = "<group>"; };
 		1D76364924BAA042003F08B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D76365E24BAA350003F08B3 /* RESTRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTRequest.swift; sourceTree = "<group>"; };
+		1D76365F24BAA350003F08B3 /* RESTService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTService.swift; sourceTree = "<group>"; };
+		1D76366024BAA350003F08B3 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +101,11 @@
 		1D76362124BAA03C003F08B3 /* marvel-challenge */ = {
 			isa = PBXGroup;
 			children = (
-				1D76365924BAA0DF003F08B3 /* Tests */,
+				1D76365524BAA098003F08B3 /* Common */,
 				1D76365824BAA0CF003F08B3 /* Base */,
 				1D76365724BAA0CA003F08B3 /* Scenes */,
 				1D76365624BAA0A6003F08B3 /* Assets */,
-				1D76365524BAA098003F08B3 /* Common */,
+				1D76365924BAA0DF003F08B3 /* Tests */,
 				1D76362B24BAA03C003F08B3 /* marvel_challenge.xcdatamodeld */,
 			);
 			path = "marvel-challenge";
@@ -126,6 +132,7 @@
 		1D76365524BAA098003F08B3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1D76365A24BAA30D003F08B3 /* Modules */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -163,6 +170,24 @@
 				1D76364624BAA042003F08B3 /* marvel-challengeUITests */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		1D76365A24BAA30D003F08B3 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				1D76365D24BAA33E003F08B3 /* RESTService */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		1D76365D24BAA33E003F08B3 /* RESTService */ = {
+			isa = PBXGroup;
+			children = (
+				1D76365E24BAA350003F08B3 /* RESTRequest.swift */,
+				1D76365F24BAA350003F08B3 /* RESTService.swift */,
+				1D76366024BAA350003F08B3 /* HTTPMethod.swift */,
+			);
+			path = RESTService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,7 +322,10 @@
 			files = (
 				1D76362324BAA03C003F08B3 /* AppDelegate.swift in Sources */,
 				1D76362D24BAA03C003F08B3 /* marvel_challenge.xcdatamodeld in Sources */,
+				1D76366324BAA350003F08B3 /* HTTPMethod.swift in Sources */,
 				1D76362524BAA03C003F08B3 /* SceneDelegate.swift in Sources */,
+				1D76366124BAA350003F08B3 /* RESTRequest.swift in Sources */,
+				1D76366224BAA350003F08B3 /* RESTService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
