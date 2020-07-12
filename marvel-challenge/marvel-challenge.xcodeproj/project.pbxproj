@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -52,6 +52,10 @@
 		1D76367324BAA715003F08B3 /* CharactersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D76367224BAA715003F08B3 /* CharactersFactory.swift */; };
 		1D76367924BAA788003F08B3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D76367824BAA788003F08B3 /* MainTabBarController.swift */; };
 		1D8D2A7724BAA900001EC399 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D8D2A7624BAA900001EC399 /* Default-568h@2x.png */; };
+		1DB329BD24BB7F49001B4C90 /* MarvelNavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB329BC24BB7F49001B4C90 /* MarvelNavigationTitle.swift */; };
+		40554EF9BAFD75C9EB14B4E3 /* Pods_marvel_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA043014F60F4E5FA0BB47D1 /* Pods_marvel_challenge.framework */; };
+		B8B7801E8AF1FF53BB047045 /* Pods_marvel_challenge_marvel_challengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB072EA4692C3899C1642008 /* Pods_marvel_challenge_marvel_challengeUITests.framework */; };
+		D96D3B52950B6B464034951F /* Pods_marvel_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B768F76B1A77B18AC2F77950 /* Pods_marvel_challengeTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D6C954D979BD96FCAD5C2BE /* Pods-marvel-challengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvel-challengeTests.release.xcconfig"; path = "Target Support Files/Pods-marvel-challengeTests/Pods-marvel-challengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		1D6F65AC24BABD2900F3B5A9 /* RESTErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTErrors.swift; sourceTree = "<group>"; };
 		1D6F65B724BACD6F00F3B5A9 /* Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
 		1D6F65B924BAD89400F3B5A9 /* MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
@@ -124,6 +129,15 @@
 		1D76367224BAA715003F08B3 /* CharactersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersFactory.swift; sourceTree = "<group>"; };
 		1D76367824BAA788003F08B3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1D8D2A7624BAA900001EC399 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1DB329BC24BB7F49001B4C90 /* MarvelNavigationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelNavigationTitle.swift; sourceTree = "<group>"; };
+		272D38A53B7B923AE8F04617 /* Pods-marvel-challengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvel-challengeTests.debug.xcconfig"; path = "Target Support Files/Pods-marvel-challengeTests/Pods-marvel-challengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3C6EDB5DA018F2BD06BE3DA0 /* Pods-marvel-challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvel-challenge.debug.xcconfig"; path = "Target Support Files/Pods-marvel-challenge/Pods-marvel-challenge.debug.xcconfig"; sourceTree = "<group>"; };
+		5C167842AD65F850FA417A24 /* Pods-marvel-challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvel-challenge.release.xcconfig"; path = "Target Support Files/Pods-marvel-challenge/Pods-marvel-challenge.release.xcconfig"; sourceTree = "<group>"; };
+		9EF379D1D4DFD1D503713C17 /* Pods-marvel-challenge-marvel-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvel-challenge-marvel-challengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-marvel-challenge-marvel-challengeUITests/Pods-marvel-challenge-marvel-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B768F76B1A77B18AC2F77950 /* Pods_marvel_challengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marvel_challengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB072EA4692C3899C1642008 /* Pods_marvel_challenge_marvel_challengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marvel_challenge_marvel_challengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA043014F60F4E5FA0BB47D1 /* Pods_marvel_challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marvel_challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D461CF258ADC50B424CF3908 /* Pods-marvel-challenge-marvel-challengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvel-challenge-marvel-challengeUITests.release.xcconfig"; path = "Target Support Files/Pods-marvel-challenge-marvel-challengeUITests/Pods-marvel-challenge-marvel-challengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40554EF9BAFD75C9EB14B4E3 /* Pods_marvel_challenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D96D3B52950B6B464034951F /* Pods_marvel_challengeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8B7801E8AF1FF53BB047045 /* Pods_marvel_challenge_marvel_challengeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +229,8 @@
 				1D8D2A7624BAA900001EC399 /* Default-568h@2x.png */,
 				1D76362124BAA03C003F08B3 /* marvel-challenge */,
 				1D76362024BAA03C003F08B3 /* Products */,
+				467920571CF378591C187EC2 /* Pods */,
+				3A8AE01C4EC81C9542807A10 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -341,6 +360,7 @@
 		1D76367524BAA763003F08B3 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1DB329BC24BB7F49001B4C90 /* MarvelNavigationTitle.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -353,6 +373,29 @@
 			path = MainTabBar;
 			sourceTree = "<group>";
 		};
+		3A8AE01C4EC81C9542807A10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA043014F60F4E5FA0BB47D1 /* Pods_marvel_challenge.framework */,
+				BB072EA4692C3899C1642008 /* Pods_marvel_challenge_marvel_challengeUITests.framework */,
+				B768F76B1A77B18AC2F77950 /* Pods_marvel_challengeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		467920571CF378591C187EC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C6EDB5DA018F2BD06BE3DA0 /* Pods-marvel-challenge.debug.xcconfig */,
+				5C167842AD65F850FA417A24 /* Pods-marvel-challenge.release.xcconfig */,
+				9EF379D1D4DFD1D503713C17 /* Pods-marvel-challenge-marvel-challengeUITests.debug.xcconfig */,
+				D461CF258ADC50B424CF3908 /* Pods-marvel-challenge-marvel-challengeUITests.release.xcconfig */,
+				272D38A53B7B923AE8F04617 /* Pods-marvel-challengeTests.debug.xcconfig */,
+				0D6C954D979BD96FCAD5C2BE /* Pods-marvel-challengeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -360,9 +403,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D76364C24BAA042003F08B3 /* Build configuration list for PBXNativeTarget "marvel-challenge" */;
 			buildPhases = (
+				FAF3643D41DD972C97FEBA99 /* [CP] Check Pods Manifest.lock */,
 				1D76361B24BAA03C003F08B3 /* Sources */,
 				1D76361C24BAA03C003F08B3 /* Frameworks */,
 				1D76361D24BAA03C003F08B3 /* Resources */,
+				E4BCE7B5577D1A5741DFB6EC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -377,6 +422,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D76364F24BAA042003F08B3 /* Build configuration list for PBXNativeTarget "marvel-challengeTests" */;
 			buildPhases = (
+				9BDE7531CE22FD63AD08454C /* [CP] Check Pods Manifest.lock */,
 				1D76363424BAA042003F08B3 /* Sources */,
 				1D76363524BAA042003F08B3 /* Frameworks */,
 				1D76363624BAA042003F08B3 /* Resources */,
@@ -395,9 +441,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D76365224BAA042003F08B3 /* Build configuration list for PBXNativeTarget "marvel-challengeUITests" */;
 			buildPhases = (
+				BECE71D48B681DC08F82530E /* [CP] Check Pods Manifest.lock */,
 				1D76363F24BAA042003F08B3 /* Sources */,
 				1D76364024BAA042003F08B3 /* Frameworks */,
 				1D76364124BAA042003F08B3 /* Resources */,
+				6E4CD3364AECDDF8333B07AC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -480,6 +528,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6E4CD3364AECDDF8333B07AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-marvel-challenge-marvel-challengeUITests/Pods-marvel-challenge-marvel-challengeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-marvel-challenge-marvel-challengeUITests/Pods-marvel-challenge-marvel-challengeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-marvel-challenge-marvel-challengeUITests/Pods-marvel-challenge-marvel-challengeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BDE7531CE22FD63AD08454C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-marvel-challengeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BECE71D48B681DC08F82530E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-marvel-challenge-marvel-challengeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4BCE7B5577D1A5741DFB6EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-marvel-challenge/Pods-marvel-challenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-marvel-challenge/Pods-marvel-challenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-marvel-challenge/Pods-marvel-challenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAF3643D41DD972C97FEBA99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-marvel-challenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1D76361B24BAA03C003F08B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -492,6 +643,7 @@
 				1D71248424BAB9370047D53B /* StorySummaryModel.swift in Sources */,
 				1D76362324BAA03C003F08B3 /* AppDelegate.swift in Sources */,
 				1D71248824BAB9A00047D53B /* EventSummaryModel.swift in Sources */,
+				1DB329BD24BB7F49001B4C90 /* MarvelNavigationTitle.swift in Sources */,
 				1D6F65B024BAC2D000F3B5A9 /* FavoritesWorker.swift in Sources */,
 				1D76362D24BAA03C003F08B3 /* marvel_challenge.xcdatamodeld in Sources */,
 				1D6F65B424BAC2D000F3B5A9 /* FavoritesInteractor.swift in Sources */,
@@ -686,6 +838,7 @@
 		};
 		1D76364D24BAA042003F08B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C6EDB5DA018F2BD06BE3DA0 /* Pods-marvel-challenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -703,6 +856,7 @@
 		};
 		1D76364E24BAA042003F08B3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C167842AD65F850FA417A24 /* Pods-marvel-challenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -720,6 +874,7 @@
 		};
 		1D76365024BAA042003F08B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 272D38A53B7B923AE8F04617 /* Pods-marvel-challengeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -741,6 +896,7 @@
 		};
 		1D76365124BAA042003F08B3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D6C954D979BD96FCAD5C2BE /* Pods-marvel-challengeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -762,6 +918,7 @@
 		};
 		1D76365324BAA042003F08B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EF379D1D4DFD1D503713C17 /* Pods-marvel-challenge-marvel-challengeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -781,6 +938,7 @@
 		};
 		1D76365424BAA042003F08B3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D461CF258ADC50B424CF3908 /* Pods-marvel-challenge-marvel-challengeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

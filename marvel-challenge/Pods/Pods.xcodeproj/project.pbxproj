@@ -1,0 +1,1126 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0856B93E699B588BA71FE0CE044095E4 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D1363A413AC7228B16195D76F4019 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift */; };
+		1792253FB4C2C25168FA2152DD8DF0C2 /* NVActivityIndicatorAnimationBallTrianglePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7ED7868570CAF97BCC879DDF7467B7 /* NVActivityIndicatorAnimationBallTrianglePath.swift */; };
+		22F67B17DFA4F0A721137347695646AF /* NVActivityIndicatorAnimationPacman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497BD6EDA84DFB5C775F222CCB6EA4B8 /* NVActivityIndicatorAnimationPacman.swift */; };
+		2A44D897511EF2E554A26B4CE0ADF791 /* NVActivityIndicatorAnimationBallZigZag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4FA73034D9A5C787DEF69CCECF90CC /* NVActivityIndicatorAnimationBallZigZag.swift */; };
+		2F0A0F0D1EF11FF26081AB85B924BAF9 /* NVActivityIndicatorAnimationBallGridBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FD432A458DFBDD999D0D603A3378F0 /* NVActivityIndicatorAnimationBallGridBeat.swift */; };
+		3519EA46150EFDC342809478BB460764 /* NVActivityIndicatorAnimationBlank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0970928CBF4AEA379331681A8F87D90C /* NVActivityIndicatorAnimationBlank.swift */; };
+		35E05B3DDE11B0EC42452E2D956F8632 /* NVActivityIndicatorView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BFCD39C479A5888E0876879214D06086 /* NVActivityIndicatorView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		39F6F08BA69383C4F45C9E2DB5247AB9 /* NVActivityIndicatorAnimationBallRotateChase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1696B4C6447580C6B3EC9327A72E1C /* NVActivityIndicatorAnimationBallRotateChase.swift */; };
+		46CE037FE4D8E73482B4F9062F041040 /* NVActivityIndicatorAnimationOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D18B5BC549647238CEFBA9FEC4417F4 /* NVActivityIndicatorAnimationOrbit.swift */; };
+		47D5EA35A5F04B05BF8CE8926B4561CE /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217A85EA13AB1DF0F5CC2FC4E7AC4AB8 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift */; };
+		4D342EA223226DB27B6A1A049F35ACE2 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0621C277C35CFD0B24BBA15E7AC21B6 /* NVActivityIndicatorAnimationBallRotate.swift */; };
+		5143B2CFD406F5A2CDCF928590213ACC /* NVActivityIndicatorAnimationBallPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E408A0ACD058BBF5F4CFFB2D68DEB7A /* NVActivityIndicatorAnimationBallPulse.swift */; };
+		554EBC7F98F85E45C19545D58EB6F6CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B64BEB39CC506B65115EE95302D64 /* Foundation.framework */; };
+		5BA2C9718F094CF84BCF2736E355ED1F /* NVActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490AAB2153CDD1D75D9C38F9A367B681 /* NVActivityIndicatorView.swift */; };
+		61300EB5A27F0D9F4080E6DB1E482CC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B64BEB39CC506B65115EE95302D64 /* Foundation.framework */; };
+		663C075508F804454D38C145A77F8313 /* NVActivityIndicatorAnimationLineScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F1DC4E9E4E52C84E12D482C213407 /* NVActivityIndicatorAnimationLineScale.swift */; };
+		69076D8F9549252BE319EAE1551344F2 /* NVActivityIndicatorAnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB7E54AFBAF17C10A25AF908BEBEDF1 /* NVActivityIndicatorAnimationDelegate.swift */; };
+		6F833200EFC8C5B6FDC287573A7A6E80 /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650CF3770831222A9EE53719208E28DB /* NVActivityIndicatorAnimationBallScaleRipple.swift */; };
+		73285C4027299D1DABEAF192252D0A0A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F545AB76C9016ECAD7D83A1129E704 /* UIKit.framework */; };
+		7C863C610C547CE943935738F9EB2DA9 /* NVActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA1A803842E5DAD0DDDE66B78B7781 /* NVActivityIndicatorShape.swift */; };
+		7EDE938189448935DE76F586020C0B56 /* Pods-marvel-challenge-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2BC748965436F015D850577EA18584 /* Pods-marvel-challenge-dummy.m */; };
+		7F65D07172CA366E6A45E12C1F41DC43 /* Pods-marvel-challenge-marvel-challengeUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1191C534EF41E5102FD4A4985A77CB02 /* Pods-marvel-challenge-marvel-challengeUITests-dummy.m */; };
+		85405C7944EDAFAB142BCBA3C6BE4224 /* Pods-marvel-challengeTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D23A8266E925DE48C10A13A6B190721F /* Pods-marvel-challengeTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8EF1CB45ED6FC85ECC3D163CFFC599C4 /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65C251562493ED09CF47B71CF8B5B8 /* NVActivityIndicatorAnimationLineScaleParty.swift */; };
+		907553B522DA68EF37DC53139144D311 /* Pods-marvel-challenge-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B2705E1B4B329F0B4BF40A4334FE32B /* Pods-marvel-challenge-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		963602F41BAC27D5DC81FEBD6986BA39 /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B822F3005F71E8053B19A4A08F2742B /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift */; };
+		9750808FCEAC99C25DE17DA51F113A49 /* NVActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151D132D48D65F3BEEFAD026B2D4DF39 /* NVActivityIndicatorAnimationCircleStrokeSpin.swift */; };
+		9BA412D0119CAD1C5A535880E81BB29B /* NVActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C552351866C4D90E65FD88654930803 /* NVActivityIndicatorAnimationTriangleSkewSpin.swift */; };
+		9F4487601DE06B744662316A639E7090 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009A594E7325F0F61B95256895BAA114 /* NVActivityIndicatorAnimationBallClipRotate.swift */; };
+		AC105C7FDD299B4A7EBDDB6DB8D59A1B /* Pods-marvel-challenge-marvel-challengeUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6254433F82C740F490991A54D6671636 /* Pods-marvel-challenge-marvel-challengeUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE10ADA994336195F3DF62DC0BBDFFF6 /* NVActivityIndicatorAnimationBallDoubleBounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE633900C0EDE85AF2CC066F77E83AB /* NVActivityIndicatorAnimationBallDoubleBounce.swift */; };
+		AE97C4E3169C923A3BA958DE546E502B /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1678A9036F0AF6A6D812243CE36403AB /* NVActivityIndicatorAnimationBallPulseSync.swift */; };
+		B00F98BA3B01E335F9C80C30EBF1B4B4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD5169B524477639A9A41855A47F99 /* QuartzCore.framework */; };
+		B0B09FEE937FB48C19FF419E42AC2A99 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E929A522B60246522121F6130F6E24A4 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift */; };
+		B134C0718B093D382DFA0A018EF1E28F /* NVActivityIndicatorAnimationBallBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C8F1C5B055FD84C5478FCCD966CFC /* NVActivityIndicatorAnimationBallBeat.swift */; };
+		B6FA683B14B58E9D859BF1C9DEF8A27C /* NVActivityIndicatorAnimationLineScalePulseOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12432C94239BE40682C2BD3556C6FD8 /* NVActivityIndicatorAnimationLineScalePulseOut.swift */; };
+		BECF0A35A0012D1292BD73577E987B79 /* NVActivityIndicatorAnimationBallGridPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CF83589EB8E5340FB2BE588E8F62FC /* NVActivityIndicatorAnimationBallGridPulse.swift */; };
+		BF0B84E58E3DEEB09EF1767AF5F62467 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF808FE574A20D1EA8BD5A41267A2E93 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift */; };
+		BFC3F943EA85BB52A42E526E3D109FA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B64BEB39CC506B65115EE95302D64 /* Foundation.framework */; };
+		CB4F715622B5FDC9AC73CE162FC8AFE4 /* NVActivityIndicatorView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 057764FFBDA1189C2725F213235378B3 /* NVActivityIndicatorView-dummy.m */; };
+		D073639EFB1D5504F6AFBDAA4676BA18 /* NVActivityIndicatorAnimationAudioEqualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756F5E6EC3E51D94434C5E8A13B385D2 /* NVActivityIndicatorAnimationAudioEqualizer.swift */; };
+		D71DB125DCD4BBB712691800792FB445 /* Pods-marvel-challengeTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5812CD15FF125D5F47EB189AB7645537 /* Pods-marvel-challengeTests-dummy.m */; };
+		D86E23A9CC96F9ED57FB2A5D36643554 /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C82537BC4DB4B265C1377ADD8E2BDCF /* NVActivityIndicatorAnimationCubeTransition.swift */; };
+		D908C3602CA4905AD9F1AC0FF447CE9F /* NVActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EDEFA3C4E51DC3F241D138D9497824 /* NVActivityIndicatorAnimationBallZigZagDeflect.swift */; };
+		DF54D32B832B65C6BA766DA277C31071 /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E57650928B9D46B2CDDB671FE6B6F7E /* NVActivityIndicatorAnimationBallPulseRise.swift */; };
+		E607C60452E2A0A34DD84848E2E0267E /* NVActivityIndicatorAnimationSemiCircleSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A4234E28B26C05529A7E447CA1222 /* NVActivityIndicatorAnimationSemiCircleSpin.swift */; };
+		E7BC269660A431F5EC0ADCC5E14577AB /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42663DBB1E4F69B8C1F0759B3515E023 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift */; };
+		EE4C44DB9A3E067C7660FAA862EE11B1 /* NVActivityIndicatorAnimationBallScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C3FBACA515DB5493F2225E7808692E /* NVActivityIndicatorAnimationBallScale.swift */; };
+		F47E4E5707EB746E39CBA999CDF4DAA0 /* NVActivityIndicatorAnimationSquareSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D04F60946AA480D437A161F6F7EB75 /* NVActivityIndicatorAnimationSquareSpin.swift */; };
+		F616D133446433EDF3CC65D4D61E91AD /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB219AE54478E8D4394A21FA3C715063 /* NVActivityIndicatorAnimationBallScaleMultiple.swift */; };
+		FE472F104EC98B0F3B991A55E1E5DD39 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950B64BEB39CC506B65115EE95302D64 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB8C181592D9E6987A2DC97C2F571235 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81AA4F50545D740172CB82E0C5DA7093;
+			remoteInfo = "Pods-marvel-challenge";
+		};
+		F4F9ED4CBAF80689FC22BD947652EF57 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF8A82876C43F4DFD625D1823E680EAC;
+			remoteInfo = NVActivityIndicatorView;
+		};
+		F4FC84F21BE6D6FDFFDAF325397ACEC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF8A82876C43F4DFD625D1823E680EAC;
+			remoteInfo = NVActivityIndicatorView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		009A594E7325F0F61B95256895BAA114 /* NVActivityIndicatorAnimationBallClipRotate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallClipRotate.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallClipRotate.swift; sourceTree = "<group>"; };
+		0452B20CE37FFB99640ADCE8D7DE068D /* Pods-marvel-challenge-marvel-challengeUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-marvel-challenge-marvel-challengeUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		057764FFBDA1189C2725F213235378B3 /* NVActivityIndicatorView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NVActivityIndicatorView-dummy.m"; sourceTree = "<group>"; };
+		0970928CBF4AEA379331681A8F87D90C /* NVActivityIndicatorAnimationBlank.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBlank.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBlank.swift; sourceTree = "<group>"; };
+		0A53D782FBBDB03E84E5A7C5A181E5BA /* Pods-marvel-challenge-marvel-challengeUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-marvel-challenge-marvel-challengeUITests.modulemap"; sourceTree = "<group>"; };
+		1191C534EF41E5102FD4A4985A77CB02 /* Pods-marvel-challenge-marvel-challengeUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-marvel-challenge-marvel-challengeUITests-dummy.m"; sourceTree = "<group>"; };
+		1351733396E56DBE19E596E594A244E6 /* Pods_marvel_challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_marvel_challenge.framework; path = "Pods-marvel-challenge.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		151D132D48D65F3BEEFAD026B2D4DF39 /* NVActivityIndicatorAnimationCircleStrokeSpin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationCircleStrokeSpin.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationCircleStrokeSpin.swift; sourceTree = "<group>"; };
+		153E6B50B2E5D7A030A70C6ABCA4A40C /* Pods_marvel_challengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_marvel_challengeTests.framework; path = "Pods-marvel-challengeTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1678A9036F0AF6A6D812243CE36403AB /* NVActivityIndicatorAnimationBallPulseSync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallPulseSync.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallPulseSync.swift; sourceTree = "<group>"; };
+		199A4234E28B26C05529A7E447CA1222 /* NVActivityIndicatorAnimationSemiCircleSpin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationSemiCircleSpin.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationSemiCircleSpin.swift; sourceTree = "<group>"; };
+		1B822F3005F71E8053B19A4A08F2742B /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallSpinFadeLoader.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallSpinFadeLoader.swift; sourceTree = "<group>"; };
+		1E57650928B9D46B2CDDB671FE6B6F7E /* NVActivityIndicatorAnimationBallPulseRise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallPulseRise.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallPulseRise.swift; sourceTree = "<group>"; };
+		20F398123E2B4CEE9203E8C5FCC0FC49 /* Pods-marvel-challenge.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-marvel-challenge.modulemap"; sourceTree = "<group>"; };
+		217A85EA13AB1DF0F5CC2FC4E7AC4AB8 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallScaleRippleMultiple.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallScaleRippleMultiple.swift; sourceTree = "<group>"; };
+		2267C08761DD1EFE49E546620FD495F4 /* NVActivityIndicatorView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NVActivityIndicatorView.xcconfig; sourceTree = "<group>"; };
+		28BF319FAF32952D3EFD27E71BAD4E45 /* Pods-marvel-challenge-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-marvel-challenge-Info.plist"; sourceTree = "<group>"; };
+		295C790B1BCF48D779EE75BA63D4561D /* Pods-marvel-challenge-marvel-challengeUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-marvel-challenge-marvel-challengeUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		29A5DE5553D29EF05EAD3B02B40E7B9D /* Pods-marvel-challengeTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-marvel-challengeTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		2D18B5BC549647238CEFBA9FEC4417F4 /* NVActivityIndicatorAnimationOrbit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationOrbit.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationOrbit.swift; sourceTree = "<group>"; };
+		2E8C8F1C5B055FD84C5478FCCD966CFC /* NVActivityIndicatorAnimationBallBeat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallBeat.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallBeat.swift; sourceTree = "<group>"; };
+		377EF12BA95CDE04E9610575E3DB46FC /* Pods-marvel-challenge-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-marvel-challenge-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3C552351866C4D90E65FD88654930803 /* NVActivityIndicatorAnimationTriangleSkewSpin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationTriangleSkewSpin.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationTriangleSkewSpin.swift; sourceTree = "<group>"; };
+		42663DBB1E4F69B8C1F0759B3515E023 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineSpinFadeLoader.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationLineSpinFadeLoader.swift; sourceTree = "<group>"; };
+		48999C1024D0DD32D761DAD1E2CCB959 /* Pods-marvel-challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-marvel-challenge.release.xcconfig"; sourceTree = "<group>"; };
+		490AAB2153CDD1D75D9C38F9A367B681 /* NVActivityIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorView.swift; path = Sources/Base/NVActivityIndicatorView.swift; sourceTree = "<group>"; };
+		497BD6EDA84DFB5C775F222CCB6EA4B8 /* NVActivityIndicatorAnimationPacman.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationPacman.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationPacman.swift; sourceTree = "<group>"; };
+		49F545AB76C9016ECAD7D83A1129E704 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		4A65C251562493ED09CF47B71CF8B5B8 /* NVActivityIndicatorAnimationLineScaleParty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineScaleParty.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationLineScaleParty.swift; sourceTree = "<group>"; };
+		4C82537BC4DB4B265C1377ADD8E2BDCF /* NVActivityIndicatorAnimationCubeTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationCubeTransition.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationCubeTransition.swift; sourceTree = "<group>"; };
+		4E34FF93BEEA93FA82AB707A30821110 /* Pods-marvel-challenge-marvel-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-marvel-challenge-marvel-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		51E8BB7B82458E913F9D16A3D0767E50 /* Pods_marvel_challenge_marvel_challengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_marvel_challenge_marvel_challengeUITests.framework; path = "Pods-marvel-challenge-marvel-challengeUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5812CD15FF125D5F47EB189AB7645537 /* Pods-marvel-challengeTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-marvel-challengeTests-dummy.m"; sourceTree = "<group>"; };
+		600D0E1AD91B27D72DC4056AE5F414B0 /* Pods-marvel-challenge-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-marvel-challenge-frameworks.sh"; sourceTree = "<group>"; };
+		6254433F82C740F490991A54D6671636 /* Pods-marvel-challenge-marvel-challengeUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-marvel-challenge-marvel-challengeUITests-umbrella.h"; sourceTree = "<group>"; };
+		650CF3770831222A9EE53719208E28DB /* NVActivityIndicatorAnimationBallScaleRipple.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallScaleRipple.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallScaleRipple.swift; sourceTree = "<group>"; };
+		6631BA4106A1E70DE049E40F26588368 /* NVActivityIndicatorView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "NVActivityIndicatorView-Info.plist"; sourceTree = "<group>"; };
+		6B2705E1B4B329F0B4BF40A4334FE32B /* Pods-marvel-challenge-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-marvel-challenge-umbrella.h"; sourceTree = "<group>"; };
+		6E408A0ACD058BBF5F4CFFB2D68DEB7A /* NVActivityIndicatorAnimationBallPulse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallPulse.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallPulse.swift; sourceTree = "<group>"; };
+		6E9F1DC4E9E4E52C84E12D482C213407 /* NVActivityIndicatorAnimationLineScale.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineScale.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationLineScale.swift; sourceTree = "<group>"; };
+		756F5E6EC3E51D94434C5E8A13B385D2 /* NVActivityIndicatorAnimationAudioEqualizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationAudioEqualizer.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationAudioEqualizer.swift; sourceTree = "<group>"; };
+		7FEA1A803842E5DAD0DDDE66B78B7781 /* NVActivityIndicatorShape.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorShape.swift; path = Sources/Base/NVActivityIndicatorShape.swift; sourceTree = "<group>"; };
+		80CF83589EB8E5340FB2BE588E8F62FC /* NVActivityIndicatorAnimationBallGridPulse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallGridPulse.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallGridPulse.swift; sourceTree = "<group>"; };
+		80D04F60946AA480D437A161F6F7EB75 /* NVActivityIndicatorAnimationSquareSpin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationSquareSpin.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationSquareSpin.swift; sourceTree = "<group>"; };
+		8C2BC748965436F015D850577EA18584 /* Pods-marvel-challenge-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-marvel-challenge-dummy.m"; sourceTree = "<group>"; };
+		8C7ED7868570CAF97BCC879DDF7467B7 /* NVActivityIndicatorAnimationBallTrianglePath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallTrianglePath.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallTrianglePath.swift; sourceTree = "<group>"; };
+		950B64BEB39CC506B65115EE95302D64 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		97E925E25B959DC9131F2277CC3B7121 /* Pods-marvel-challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-marvel-challenge.debug.xcconfig"; sourceTree = "<group>"; };
+		9C4FA73034D9A5C787DEF69CCECF90CC /* NVActivityIndicatorAnimationBallZigZag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallZigZag.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallZigZag.swift; sourceTree = "<group>"; };
+		9D0E356ED9AC87DAAA75EC7F258A847E /* Pods-marvel-challengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-marvel-challengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F801B70A91FEA7AD6B5CE20BDAD51CC /* Pods-marvel-challengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-marvel-challengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		A1B9F27862201CD82B398E0B35B14128 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NVActivityIndicatorView.framework; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD5FEBFD41DE41724571A8131A0FBF62 /* Pods-marvel-challengeTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-marvel-challengeTests.modulemap"; sourceTree = "<group>"; };
+		AD62377B436303B9B60121647A678923 /* NVActivityIndicatorView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NVActivityIndicatorView-prefix.pch"; sourceTree = "<group>"; };
+		AFE633900C0EDE85AF2CC066F77E83AB /* NVActivityIndicatorAnimationBallDoubleBounce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallDoubleBounce.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallDoubleBounce.swift; sourceTree = "<group>"; };
+		B0621C277C35CFD0B24BBA15E7AC21B6 /* NVActivityIndicatorAnimationBallRotate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallRotate.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallRotate.swift; sourceTree = "<group>"; };
+		B98D1363A413AC7228B16195D76F4019 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineScalePulseOutRapid.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationLineScalePulseOutRapid.swift; sourceTree = "<group>"; };
+		BF808FE574A20D1EA8BD5A41267A2E93 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallClipRotateMultiple.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallClipRotateMultiple.swift; sourceTree = "<group>"; };
+		BFCD39C479A5888E0876879214D06086 /* NVActivityIndicatorView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NVActivityIndicatorView-umbrella.h"; sourceTree = "<group>"; };
+		C2FD432A458DFBDD999D0D603A3378F0 /* NVActivityIndicatorAnimationBallGridBeat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallGridBeat.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallGridBeat.swift; sourceTree = "<group>"; };
+		C7B2E81E5084CF0ED1AF78FEFC994EB7 /* Pods-marvel-challengeTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-marvel-challengeTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CBCD5169B524477639A9A41855A47F99 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		D23A8266E925DE48C10A13A6B190721F /* Pods-marvel-challengeTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-marvel-challengeTests-umbrella.h"; sourceTree = "<group>"; };
+		D4EDEFA3C4E51DC3F241D138D9497824 /* NVActivityIndicatorAnimationBallZigZagDeflect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallZigZagDeflect.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallZigZagDeflect.swift; sourceTree = "<group>"; };
+		D698C194304145B71B6316F78B89B979 /* NVActivityIndicatorView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NVActivityIndicatorView.modulemap; sourceTree = "<group>"; };
+		D9C3FBACA515DB5493F2225E7808692E /* NVActivityIndicatorAnimationBallScale.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallScale.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallScale.swift; sourceTree = "<group>"; };
+		DB219AE54478E8D4394A21FA3C715063 /* NVActivityIndicatorAnimationBallScaleMultiple.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallScaleMultiple.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallScaleMultiple.swift; sourceTree = "<group>"; };
+		DD7E6A25D35646650617095A037377AD /* Pods-marvel-challenge-marvel-challengeUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-marvel-challenge-marvel-challengeUITests-frameworks.sh"; sourceTree = "<group>"; };
+		E929A522B60246522121F6130F6E24A4 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallClipRotatePulse.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallClipRotatePulse.swift; sourceTree = "<group>"; };
+		E97C51B1286545BD9DFCA47CFE7FDF90 /* Pods-marvel-challenge-marvel-challengeUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-marvel-challenge-marvel-challengeUITests-Info.plist"; sourceTree = "<group>"; };
+		ED7D1247DA426A432AC61DCD796F6917 /* Pods-marvel-challenge-marvel-challengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-marvel-challenge-marvel-challengeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EDC2E13B5F908CF4E5C757512A15BB77 /* Pods-marvel-challengeTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-marvel-challengeTests-Info.plist"; sourceTree = "<group>"; };
+		F12432C94239BE40682C2BD3556C6FD8 /* NVActivityIndicatorAnimationLineScalePulseOut.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineScalePulseOut.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationLineScalePulseOut.swift; sourceTree = "<group>"; };
+		F63B1BBFA9AF8902635C5B7AF15D138D /* Pods-marvel-challenge-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-marvel-challenge-acknowledgements.plist"; sourceTree = "<group>"; };
+		FC1696B4C6447580C6B3EC9327A72E1C /* NVActivityIndicatorAnimationBallRotateChase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallRotateChase.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallRotateChase.swift; sourceTree = "<group>"; };
+		FCB7E54AFBAF17C10A25AF908BEBEDF1 /* NVActivityIndicatorAnimationDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationDelegate.swift; path = Sources/Base/NVActivityIndicatorAnimationDelegate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		71DAF6F92AAAD94899E0FD2F0C51DCAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE472F104EC98B0F3B991A55E1E5DD39 /* Foundation.framework in Frameworks */,
+				B00F98BA3B01E335F9C80C30EBF1B4B4 /* QuartzCore.framework in Frameworks */,
+				73285C4027299D1DABEAF192252D0A0A /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB17ADE7EA5D02541489F083E9A5FF2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				554EBC7F98F85E45C19545D58EB6F6CD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0E69994EECA2FB6C25AF77EEB1F4D5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61300EB5A27F0D9F4080E6DB1E482CC9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3A696452DA187C7C10F7A3A928450E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC3F943EA85BB52A42E526E3D109FA2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03C5C200A0787E300053CFA8F53CA094 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C18BABFF9523A33465B5A91496FF0C3D /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		24BF7004455106A73E2EE51314105F55 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A9DACA5A76D4BB8F166099051324FF7A /* Pods-marvel-challenge */,
+				7013054141D6539F6ED7099B0C5CB9EB /* Pods-marvel-challenge-marvel-challengeUITests */,
+				97A731F488B1556BF4E6F193C9A7F243 /* Pods-marvel-challengeTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7013054141D6539F6ED7099B0C5CB9EB /* Pods-marvel-challenge-marvel-challengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0A53D782FBBDB03E84E5A7C5A181E5BA /* Pods-marvel-challenge-marvel-challengeUITests.modulemap */,
+				295C790B1BCF48D779EE75BA63D4561D /* Pods-marvel-challenge-marvel-challengeUITests-acknowledgements.markdown */,
+				0452B20CE37FFB99640ADCE8D7DE068D /* Pods-marvel-challenge-marvel-challengeUITests-acknowledgements.plist */,
+				1191C534EF41E5102FD4A4985A77CB02 /* Pods-marvel-challenge-marvel-challengeUITests-dummy.m */,
+				DD7E6A25D35646650617095A037377AD /* Pods-marvel-challenge-marvel-challengeUITests-frameworks.sh */,
+				E97C51B1286545BD9DFCA47CFE7FDF90 /* Pods-marvel-challenge-marvel-challengeUITests-Info.plist */,
+				6254433F82C740F490991A54D6671636 /* Pods-marvel-challenge-marvel-challengeUITests-umbrella.h */,
+				4E34FF93BEEA93FA82AB707A30821110 /* Pods-marvel-challenge-marvel-challengeUITests.debug.xcconfig */,
+				ED7D1247DA426A432AC61DCD796F6917 /* Pods-marvel-challenge-marvel-challengeUITests.release.xcconfig */,
+			);
+			name = "Pods-marvel-challenge-marvel-challengeUITests";
+			path = "Target Support Files/Pods-marvel-challenge-marvel-challengeUITests";
+			sourceTree = "<group>";
+		};
+		8FD4C7C91D34D2C99CE637459EC2E990 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				756F5E6EC3E51D94434C5E8A13B385D2 /* NVActivityIndicatorAnimationAudioEqualizer.swift */,
+				2E8C8F1C5B055FD84C5478FCCD966CFC /* NVActivityIndicatorAnimationBallBeat.swift */,
+				009A594E7325F0F61B95256895BAA114 /* NVActivityIndicatorAnimationBallClipRotate.swift */,
+				BF808FE574A20D1EA8BD5A41267A2E93 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift */,
+				E929A522B60246522121F6130F6E24A4 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift */,
+				AFE633900C0EDE85AF2CC066F77E83AB /* NVActivityIndicatorAnimationBallDoubleBounce.swift */,
+				C2FD432A458DFBDD999D0D603A3378F0 /* NVActivityIndicatorAnimationBallGridBeat.swift */,
+				80CF83589EB8E5340FB2BE588E8F62FC /* NVActivityIndicatorAnimationBallGridPulse.swift */,
+				6E408A0ACD058BBF5F4CFFB2D68DEB7A /* NVActivityIndicatorAnimationBallPulse.swift */,
+				1E57650928B9D46B2CDDB671FE6B6F7E /* NVActivityIndicatorAnimationBallPulseRise.swift */,
+				1678A9036F0AF6A6D812243CE36403AB /* NVActivityIndicatorAnimationBallPulseSync.swift */,
+				B0621C277C35CFD0B24BBA15E7AC21B6 /* NVActivityIndicatorAnimationBallRotate.swift */,
+				FC1696B4C6447580C6B3EC9327A72E1C /* NVActivityIndicatorAnimationBallRotateChase.swift */,
+				D9C3FBACA515DB5493F2225E7808692E /* NVActivityIndicatorAnimationBallScale.swift */,
+				DB219AE54478E8D4394A21FA3C715063 /* NVActivityIndicatorAnimationBallScaleMultiple.swift */,
+				650CF3770831222A9EE53719208E28DB /* NVActivityIndicatorAnimationBallScaleRipple.swift */,
+				217A85EA13AB1DF0F5CC2FC4E7AC4AB8 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift */,
+				1B822F3005F71E8053B19A4A08F2742B /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift */,
+				8C7ED7868570CAF97BCC879DDF7467B7 /* NVActivityIndicatorAnimationBallTrianglePath.swift */,
+				9C4FA73034D9A5C787DEF69CCECF90CC /* NVActivityIndicatorAnimationBallZigZag.swift */,
+				D4EDEFA3C4E51DC3F241D138D9497824 /* NVActivityIndicatorAnimationBallZigZagDeflect.swift */,
+				0970928CBF4AEA379331681A8F87D90C /* NVActivityIndicatorAnimationBlank.swift */,
+				151D132D48D65F3BEEFAD026B2D4DF39 /* NVActivityIndicatorAnimationCircleStrokeSpin.swift */,
+				4C82537BC4DB4B265C1377ADD8E2BDCF /* NVActivityIndicatorAnimationCubeTransition.swift */,
+				FCB7E54AFBAF17C10A25AF908BEBEDF1 /* NVActivityIndicatorAnimationDelegate.swift */,
+				6E9F1DC4E9E4E52C84E12D482C213407 /* NVActivityIndicatorAnimationLineScale.swift */,
+				4A65C251562493ED09CF47B71CF8B5B8 /* NVActivityIndicatorAnimationLineScaleParty.swift */,
+				F12432C94239BE40682C2BD3556C6FD8 /* NVActivityIndicatorAnimationLineScalePulseOut.swift */,
+				B98D1363A413AC7228B16195D76F4019 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift */,
+				42663DBB1E4F69B8C1F0759B3515E023 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift */,
+				2D18B5BC549647238CEFBA9FEC4417F4 /* NVActivityIndicatorAnimationOrbit.swift */,
+				497BD6EDA84DFB5C775F222CCB6EA4B8 /* NVActivityIndicatorAnimationPacman.swift */,
+				199A4234E28B26C05529A7E447CA1222 /* NVActivityIndicatorAnimationSemiCircleSpin.swift */,
+				80D04F60946AA480D437A161F6F7EB75 /* NVActivityIndicatorAnimationSquareSpin.swift */,
+				3C552351866C4D90E65FD88654930803 /* NVActivityIndicatorAnimationTriangleSkewSpin.swift */,
+				7FEA1A803842E5DAD0DDDE66B78B7781 /* NVActivityIndicatorShape.swift */,
+				490AAB2153CDD1D75D9C38F9A367B681 /* NVActivityIndicatorView.swift */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		97A731F488B1556BF4E6F193C9A7F243 /* Pods-marvel-challengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD5FEBFD41DE41724571A8131A0FBF62 /* Pods-marvel-challengeTests.modulemap */,
+				C7B2E81E5084CF0ED1AF78FEFC994EB7 /* Pods-marvel-challengeTests-acknowledgements.markdown */,
+				29A5DE5553D29EF05EAD3B02B40E7B9D /* Pods-marvel-challengeTests-acknowledgements.plist */,
+				5812CD15FF125D5F47EB189AB7645537 /* Pods-marvel-challengeTests-dummy.m */,
+				EDC2E13B5F908CF4E5C757512A15BB77 /* Pods-marvel-challengeTests-Info.plist */,
+				D23A8266E925DE48C10A13A6B190721F /* Pods-marvel-challengeTests-umbrella.h */,
+				9D0E356ED9AC87DAAA75EC7F258A847E /* Pods-marvel-challengeTests.debug.xcconfig */,
+				9F801B70A91FEA7AD6B5CE20BDAD51CC /* Pods-marvel-challengeTests.release.xcconfig */,
+			);
+			name = "Pods-marvel-challengeTests";
+			path = "Target Support Files/Pods-marvel-challengeTests";
+			sourceTree = "<group>";
+		};
+		A9DACA5A76D4BB8F166099051324FF7A /* Pods-marvel-challenge */ = {
+			isa = PBXGroup;
+			children = (
+				20F398123E2B4CEE9203E8C5FCC0FC49 /* Pods-marvel-challenge.modulemap */,
+				377EF12BA95CDE04E9610575E3DB46FC /* Pods-marvel-challenge-acknowledgements.markdown */,
+				F63B1BBFA9AF8902635C5B7AF15D138D /* Pods-marvel-challenge-acknowledgements.plist */,
+				8C2BC748965436F015D850577EA18584 /* Pods-marvel-challenge-dummy.m */,
+				600D0E1AD91B27D72DC4056AE5F414B0 /* Pods-marvel-challenge-frameworks.sh */,
+				28BF319FAF32952D3EFD27E71BAD4E45 /* Pods-marvel-challenge-Info.plist */,
+				6B2705E1B4B329F0B4BF40A4334FE32B /* Pods-marvel-challenge-umbrella.h */,
+				97E925E25B959DC9131F2277CC3B7121 /* Pods-marvel-challenge.debug.xcconfig */,
+				48999C1024D0DD32D761DAD1E2CCB959 /* Pods-marvel-challenge.release.xcconfig */,
+			);
+			name = "Pods-marvel-challenge";
+			path = "Target Support Files/Pods-marvel-challenge";
+			sourceTree = "<group>";
+		};
+		B4575EFFD54E4CA894660B1660E61619 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D698C194304145B71B6316F78B89B979 /* NVActivityIndicatorView.modulemap */,
+				2267C08761DD1EFE49E546620FD495F4 /* NVActivityIndicatorView.xcconfig */,
+				057764FFBDA1189C2725F213235378B3 /* NVActivityIndicatorView-dummy.m */,
+				6631BA4106A1E70DE049E40F26588368 /* NVActivityIndicatorView-Info.plist */,
+				AD62377B436303B9B60121647A678923 /* NVActivityIndicatorView-prefix.pch */,
+				BFCD39C479A5888E0876879214D06086 /* NVActivityIndicatorView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/NVActivityIndicatorView";
+			sourceTree = "<group>";
+		};
+		B7FD44CE37A4BF4D51B5D2C91C92DB1E /* NVActivityIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				8FD4C7C91D34D2C99CE637459EC2E990 /* Base */,
+				B4575EFFD54E4CA894660B1660E61619 /* Support Files */,
+			);
+			name = NVActivityIndicatorView;
+			path = NVActivityIndicatorView;
+			sourceTree = "<group>";
+		};
+		C18BABFF9523A33465B5A91496FF0C3D /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				950B64BEB39CC506B65115EE95302D64 /* Foundation.framework */,
+				CBCD5169B524477639A9A41855A47F99 /* QuartzCore.framework */,
+				49F545AB76C9016ECAD7D83A1129E704 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				03C5C200A0787E300053CFA8F53CA094 /* Frameworks */,
+				E2B6DD60F14C0326F24CA8C890A0B249 /* Pods */,
+				D46CF1531DB3CA0509364B03AF35CB12 /* Products */,
+				24BF7004455106A73E2EE51314105F55 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D46CF1531DB3CA0509364B03AF35CB12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1B9F27862201CD82B398E0B35B14128 /* NVActivityIndicatorView.framework */,
+				1351733396E56DBE19E596E594A244E6 /* Pods_marvel_challenge.framework */,
+				51E8BB7B82458E913F9D16A3D0767E50 /* Pods_marvel_challenge_marvel_challengeUITests.framework */,
+				153E6B50B2E5D7A030A70C6ABCA4A40C /* Pods_marvel_challengeTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2B6DD60F14C0326F24CA8C890A0B249 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B7FD44CE37A4BF4D51B5D2C91C92DB1E /* NVActivityIndicatorView */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3201E596A959CDE9BF7F13BFB0FC5C9E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				907553B522DA68EF37DC53139144D311 /* Pods-marvel-challenge-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71581EB374F0BDE90F20FB42360F0724 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC105C7FDD299B4A7EBDDB6DB8D59A1B /* Pods-marvel-challenge-marvel-challengeUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0AA313B3635DDFE45228E5DB9D72CD1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35E05B3DDE11B0EC42452E2D956F8632 /* NVActivityIndicatorView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F82FAE07F1613B341AC925ACD65C96AD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85405C7944EDAFAB142BCBA3C6BE4224 /* Pods-marvel-challengeTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0DF4CD94B399EBE35C52AC55983CA99A /* Pods-marvel-challengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7A71FDFEAE7BD616E05EA4BF4D73EAB /* Build configuration list for PBXNativeTarget "Pods-marvel-challengeTests" */;
+			buildPhases = (
+				F82FAE07F1613B341AC925ACD65C96AD /* Headers */,
+				728D708C160D678DE86E78FE58333E70 /* Sources */,
+				AB17ADE7EA5D02541489F083E9A5FF2E /* Frameworks */,
+				DDAF130481369FF71D18A513712715C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9512C056CC79CE406E3E288B0EB37F8A /* PBXTargetDependency */,
+			);
+			name = "Pods-marvel-challengeTests";
+			productName = "Pods-marvel-challengeTests";
+			productReference = 153E6B50B2E5D7A030A70C6ABCA4A40C /* Pods_marvel_challengeTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		81AA4F50545D740172CB82E0C5DA7093 /* Pods-marvel-challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A198EC002A66185AD0063EFCE761C350 /* Build configuration list for PBXNativeTarget "Pods-marvel-challenge" */;
+			buildPhases = (
+				3201E596A959CDE9BF7F13BFB0FC5C9E /* Headers */,
+				30B0885A00064773682F2042DEDDD9BB /* Sources */,
+				B0E69994EECA2FB6C25AF77EEB1F4D5C /* Frameworks */,
+				E7E8BEBD39E002D93929BA8DCBBA909D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				90DC30DB1B3C5E281AC31144734D90D7 /* PBXTargetDependency */,
+			);
+			name = "Pods-marvel-challenge";
+			productName = "Pods-marvel-challenge";
+			productReference = 1351733396E56DBE19E596E594A244E6 /* Pods_marvel_challenge.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9C86D1E8522D690D9C21B60BC190421E /* Pods-marvel-challenge-marvel-challengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B80E51CD325918C179199C1D3BE1B1A5 /* Build configuration list for PBXNativeTarget "Pods-marvel-challenge-marvel-challengeUITests" */;
+			buildPhases = (
+				71581EB374F0BDE90F20FB42360F0724 /* Headers */,
+				2DCE4D15475D94001822F79F5C3E2B91 /* Sources */,
+				B3A696452DA187C7C10F7A3A928450E7 /* Frameworks */,
+				8E6760E2AE7B98DE1DC2EF24E89CE2DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9ADED5F40D7940180E1272667E7D99DE /* PBXTargetDependency */,
+			);
+			name = "Pods-marvel-challenge-marvel-challengeUITests";
+			productName = "Pods-marvel-challenge-marvel-challengeUITests";
+			productReference = 51E8BB7B82458E913F9D16A3D0767E50 /* Pods_marvel_challenge_marvel_challengeUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AF8A82876C43F4DFD625D1823E680EAC /* NVActivityIndicatorView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C2F29596E14561A060E8A2810958844 /* Build configuration list for PBXNativeTarget "NVActivityIndicatorView" */;
+			buildPhases = (
+				D0AA313B3635DDFE45228E5DB9D72CD1 /* Headers */,
+				4C0387043E358F7D107701AB2283882B /* Sources */,
+				71DAF6F92AAAD94899E0FD2F0C51DCAD /* Frameworks */,
+				9415F32C9895ED30BC1F35FBBCC99B47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NVActivityIndicatorView;
+			productName = NVActivityIndicatorView;
+			productReference = A1B9F27862201CD82B398E0B35B14128 /* NVActivityIndicatorView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = D46CF1531DB3CA0509364B03AF35CB12 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF8A82876C43F4DFD625D1823E680EAC /* NVActivityIndicatorView */,
+				81AA4F50545D740172CB82E0C5DA7093 /* Pods-marvel-challenge */,
+				9C86D1E8522D690D9C21B60BC190421E /* Pods-marvel-challenge-marvel-challengeUITests */,
+				0DF4CD94B399EBE35C52AC55983CA99A /* Pods-marvel-challengeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8E6760E2AE7B98DE1DC2EF24E89CE2DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9415F32C9895ED30BC1F35FBBCC99B47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDAF130481369FF71D18A513712715C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7E8BEBD39E002D93929BA8DCBBA909D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2DCE4D15475D94001822F79F5C3E2B91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F65D07172CA366E6A45E12C1F41DC43 /* Pods-marvel-challenge-marvel-challengeUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30B0885A00064773682F2042DEDDD9BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EDE938189448935DE76F586020C0B56 /* Pods-marvel-challenge-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C0387043E358F7D107701AB2283882B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D073639EFB1D5504F6AFBDAA4676BA18 /* NVActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
+				B134C0718B093D382DFA0A018EF1E28F /* NVActivityIndicatorAnimationBallBeat.swift in Sources */,
+				9F4487601DE06B744662316A639E7090 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
+				BF0B84E58E3DEEB09EF1767AF5F62467 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
+				B0B09FEE937FB48C19FF419E42AC2A99 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
+				AE10ADA994336195F3DF62DC0BBDFFF6 /* NVActivityIndicatorAnimationBallDoubleBounce.swift in Sources */,
+				2F0A0F0D1EF11FF26081AB85B924BAF9 /* NVActivityIndicatorAnimationBallGridBeat.swift in Sources */,
+				BECF0A35A0012D1292BD73577E987B79 /* NVActivityIndicatorAnimationBallGridPulse.swift in Sources */,
+				5143B2CFD406F5A2CDCF928590213ACC /* NVActivityIndicatorAnimationBallPulse.swift in Sources */,
+				DF54D32B832B65C6BA766DA277C31071 /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */,
+				AE97C4E3169C923A3BA958DE546E502B /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */,
+				4D342EA223226DB27B6A1A049F35ACE2 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
+				39F6F08BA69383C4F45C9E2DB5247AB9 /* NVActivityIndicatorAnimationBallRotateChase.swift in Sources */,
+				EE4C44DB9A3E067C7660FAA862EE11B1 /* NVActivityIndicatorAnimationBallScale.swift in Sources */,
+				F616D133446433EDF3CC65D4D61E91AD /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
+				6F833200EFC8C5B6FDC287573A7A6E80 /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
+				47D5EA35A5F04B05BF8CE8926B4561CE /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
+				963602F41BAC27D5DC81FEBD6986BA39 /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
+				1792253FB4C2C25168FA2152DD8DF0C2 /* NVActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
+				2A44D897511EF2E554A26B4CE0ADF791 /* NVActivityIndicatorAnimationBallZigZag.swift in Sources */,
+				D908C3602CA4905AD9F1AC0FF447CE9F /* NVActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
+				3519EA46150EFDC342809478BB460764 /* NVActivityIndicatorAnimationBlank.swift in Sources */,
+				9750808FCEAC99C25DE17DA51F113A49 /* NVActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
+				D86E23A9CC96F9ED57FB2A5D36643554 /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */,
+				69076D8F9549252BE319EAE1551344F2 /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
+				663C075508F804454D38C145A77F8313 /* NVActivityIndicatorAnimationLineScale.swift in Sources */,
+				8EF1CB45ED6FC85ECC3D163CFFC599C4 /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */,
+				B6FA683B14B58E9D859BF1C9DEF8A27C /* NVActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
+				0856B93E699B588BA71FE0CE044095E4 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
+				E7BC269660A431F5EC0ADCC5E14577AB /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
+				46CE037FE4D8E73482B4F9062F041040 /* NVActivityIndicatorAnimationOrbit.swift in Sources */,
+				22F67B17DFA4F0A721137347695646AF /* NVActivityIndicatorAnimationPacman.swift in Sources */,
+				E607C60452E2A0A34DD84848E2E0267E /* NVActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
+				F47E4E5707EB746E39CBA999CDF4DAA0 /* NVActivityIndicatorAnimationSquareSpin.swift in Sources */,
+				9BA412D0119CAD1C5A535880E81BB29B /* NVActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
+				7C863C610C547CE943935738F9EB2DA9 /* NVActivityIndicatorShape.swift in Sources */,
+				CB4F715622B5FDC9AC73CE162FC8AFE4 /* NVActivityIndicatorView-dummy.m in Sources */,
+				5BA2C9718F094CF84BCF2736E355ED1F /* NVActivityIndicatorView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		728D708C160D678DE86E78FE58333E70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D71DB125DCD4BBB712691800792FB445 /* Pods-marvel-challengeTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		90DC30DB1B3C5E281AC31144734D90D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NVActivityIndicatorView;
+			target = AF8A82876C43F4DFD625D1823E680EAC /* NVActivityIndicatorView */;
+			targetProxy = F4F9ED4CBAF80689FC22BD947652EF57 /* PBXContainerItemProxy */;
+		};
+		9512C056CC79CE406E3E288B0EB37F8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-marvel-challenge";
+			target = 81AA4F50545D740172CB82E0C5DA7093 /* Pods-marvel-challenge */;
+			targetProxy = DB8C181592D9E6987A2DC97C2F571235 /* PBXContainerItemProxy */;
+		};
+		9ADED5F40D7940180E1272667E7D99DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NVActivityIndicatorView;
+			target = AF8A82876C43F4DFD625D1823E680EAC /* NVActivityIndicatorView */;
+			targetProxy = F4FC84F21BE6D6FDFFDAF325397ACEC9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2A97A3E3ED96357A06317F585048FE95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48999C1024D0DD32D761DAD1E2CCB959 /* Pods-marvel-challenge.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-marvel-challenge/Pods-marvel-challenge-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-marvel-challenge/Pods-marvel-challenge.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		710A319CFE1587092A72EA3E23234FA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E34FF93BEEA93FA82AB707A30821110 /* Pods-marvel-challenge-marvel-challengeUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-marvel-challenge-marvel-challengeUITests/Pods-marvel-challenge-marvel-challengeUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-marvel-challenge-marvel-challengeUITests/Pods-marvel-challenge-marvel-challengeUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7A72409A5779ABBACDFA3C6514C16F98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2267C08761DD1EFE49E546620FD495F4 /* NVActivityIndicatorView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView.modulemap";
+				PRODUCT_MODULE_NAME = NVActivityIndicatorView;
+				PRODUCT_NAME = NVActivityIndicatorView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8214CCCE68E05D10DE209483AE4BA9C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D0E356ED9AC87DAAA75EC7F258A847E /* Pods-marvel-challengeTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-marvel-challengeTests/Pods-marvel-challengeTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-marvel-challengeTests/Pods-marvel-challengeTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9DF1582C5DAED00E44488786633E01AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED7D1247DA426A432AC61DCD796F6917 /* Pods-marvel-challenge-marvel-challengeUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-marvel-challenge-marvel-challengeUITests/Pods-marvel-challenge-marvel-challengeUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-marvel-challenge-marvel-challengeUITests/Pods-marvel-challenge-marvel-challengeUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A5719224F3ECB2E71017ACAA5D4258C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2267C08761DD1EFE49E546620FD495F4 /* NVActivityIndicatorView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView.modulemap";
+				PRODUCT_MODULE_NAME = NVActivityIndicatorView;
+				PRODUCT_NAME = NVActivityIndicatorView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DEAA539F78A4FFE77AA96F8F7A332456 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F801B70A91FEA7AD6B5CE20BDAD51CC /* Pods-marvel-challengeTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-marvel-challengeTests/Pods-marvel-challengeTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-marvel-challengeTests/Pods-marvel-challengeTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ECB437504DF805BD96CAABF97400B526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		F1C29299BF9211406413387EF0351931 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97E925E25B959DC9131F2277CC3B7121 /* Pods-marvel-challenge.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-marvel-challenge/Pods-marvel-challenge-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-marvel-challenge/Pods-marvel-challenge.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */,
+				ECB437504DF805BD96CAABF97400B526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C2F29596E14561A060E8A2810958844 /* Build configuration list for PBXNativeTarget "NVActivityIndicatorView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A72409A5779ABBACDFA3C6514C16F98 /* Debug */,
+				A5719224F3ECB2E71017ACAA5D4258C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A198EC002A66185AD0063EFCE761C350 /* Build configuration list for PBXNativeTarget "Pods-marvel-challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1C29299BF9211406413387EF0351931 /* Debug */,
+				2A97A3E3ED96357A06317F585048FE95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B80E51CD325918C179199C1D3BE1B1A5 /* Build configuration list for PBXNativeTarget "Pods-marvel-challenge-marvel-challengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				710A319CFE1587092A72EA3E23234FA4 /* Debug */,
+				9DF1582C5DAED00E44488786633E01AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7A71FDFEAE7BD616E05EA4BF4D73EAB /* Build configuration list for PBXNativeTarget "Pods-marvel-challengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8214CCCE68E05D10DE209483AE4BA9C4 /* Debug */,
+				DEAA539F78A4FFE77AA96F8F7A332456 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
