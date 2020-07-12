@@ -49,7 +49,6 @@
 		1D76366D24BAA6C1003F08B3 /* CharactersModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D76366724BAA6C1003F08B3 /* CharactersModels.swift */; };
 		1D76366E24BAA6C1003F08B3 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D76366824BAA6C1003F08B3 /* CharactersViewController.swift */; };
 		1D76366F24BAA6C1003F08B3 /* CharactersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D76366924BAA6C1003F08B3 /* CharactersInteractor.swift */; };
-		1D76367124BAA6CD003F08B3 /* CharactersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D76367024BAA6CD003F08B3 /* CharactersViewController.xib */; };
 		1D76367324BAA715003F08B3 /* CharactersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D76367224BAA715003F08B3 /* CharactersFactory.swift */; };
 		1D76367924BAA788003F08B3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D76367824BAA788003F08B3 /* MainTabBarController.swift */; };
 		1D8D2A7724BAA900001EC399 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D8D2A7624BAA900001EC399 /* Default-568h@2x.png */; };
@@ -458,7 +457,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D76367124BAA6CD003F08B3 /* CharactersViewController.xib in Resources */,
 				1D8D2A7724BAA900001EC399 /* Default-568h@2x.png in Resources */,
 				1D76363224BAA041003F08B3 /* LaunchScreen.storyboard in Resources */,
 				1D6F65B524BAC2D000F3B5A9 /* FavoritesViewController.xib in Resources */,
