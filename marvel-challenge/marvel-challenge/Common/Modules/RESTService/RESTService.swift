@@ -10,7 +10,7 @@ import Foundation
 
 class RESTService<T: RESTRequest>{
     func request<U: Decodable>(_ request: T, completion: @escaping (Result<U, Error>) -> Void ) {
-        let url = request.baseURL.appendingPathComponent(request.endpoint)
+        var url = request.baseURL
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.httpMethod.rawValue

@@ -9,7 +9,8 @@
 import Foundation
 
 protocol RESTRequest {
+    var baseURL: String { get }
+    var path: String { get }
+    var queryItems: [URLQueryItem]? { get }
     var httpMethod: HTTPMethod { get }
-    var baseURL: URL { get }
-    var endpoint: String { get }
 }
