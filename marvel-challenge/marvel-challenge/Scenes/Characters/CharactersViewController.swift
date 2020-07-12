@@ -6,6 +6,7 @@
 //  Copyright (c) 2020 danilo. All rights reserved.
 
 import UIKit
+import NVActivityIndicatorView
 
 protocol CharactersDisplayLogic: AnyObject {
     func displayCharacters(viewModel: Characters.GetCharacters.ViewModel)
@@ -22,10 +23,27 @@ class CharactersViewController: UITableViewController {
     let cellReuseIdentifier = String(describing: UITableViewCell.self)
     
     // MARK: Variables
-    
     var viewModel: Characters.GetCharacters.ViewModel?
     
+    // MARK: Computed Propierties
+    
+    var isSearching: Bool {
+        return searchController.searchBar.text?.isEmpty ?? false
+    }
+    
+    var searchedCharacters: [Characters.DisplayedCharacter] {
+        guard let viewModel = viewModel else { return [] }
+        let searchText = searchController.searchBar.text ?? ""
+        let options: String.CompareOptions = [.caseInsensitive, .diacriticInsensitive]
+        let searchedCharacters = viewModel.displayedCharacters.filter { (character) -> Bool in
+            return character.name.range(of: searchText, options: options) != nil
+        }
+        return searchedCharacters
+    }
+    
     // MARK: UI Elements
+    
+    lazy var loadingActivityIndicator = NVActivityIndicatorView(frame: view.frame, type: .ballRotateChase, color: .red)
     
     lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -49,9 +67,11 @@ class CharactersViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         navigationItem.searchController = searchController
         title = "Hérois"
+        view.addSubview(loadingActivityIndicator)
     }
     
     private func requestCharacters() {
+        loadingActivityIndicator.startAnimating()
         interactor?.requestCharacters()
     }
 }
@@ -61,12 +81,13 @@ class CharactersViewController: UITableViewController {
 extension CharactersViewController: CharactersDisplayLogic {
     
     func displayCharacters(viewModel: Characters.GetCharacters.ViewModel) {
+        loadingActivityIndicator.stopAnimating()
         self.viewModel = viewModel
         tableView.reloadData()
     }
     
     func displayError(_ error: Characters.Error) {
-        
+        loadingActivityIndicator.stopAnimating()
     }
     
 }
@@ -75,15 +96,27 @@ extension CharactersViewController: CharactersDisplayLogic {
 
 extension CharactersViewController {
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel?.displayedCharacters.count ?? 0
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isSearching {
+            return viewModel?.displayedCharacters.count ?? 0
+        } else {
+            return searchedCharacters.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let viewModel = viewModel else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
-        let displayedCharacter = viewModel?.displayedCharacters[indexPath.row]
         
-        cell.textLabel?.text = displayedCharacter?.name
+        let displayedCharacter: Characters.DisplayedCharacter = {
+            if isSearching {
+                return viewModel.displayedCharacters[indexPath.row]
+            } else {
+                return searchedCharacters[indexPath.row]
+            }
+        }()
+        
+        cell.textLabel?.text = displayedCharacter.name
         
         return cell
     }
@@ -93,6 +126,6 @@ extension CharactersViewController {
 
 extension CharactersViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        
+        tableView.reloadData()
     }
 }
