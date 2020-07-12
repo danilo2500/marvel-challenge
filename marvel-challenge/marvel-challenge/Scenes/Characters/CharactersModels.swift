@@ -10,22 +10,21 @@
 //  see http://clean-swift.com
 //
 
-import UIKit
+import Foundation
 
-enum Characters
-{
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
-    {
+enum Characters {
+    
+    // MARK: Use cases
+    
+    enum Something {
+        struct Request
+        {
+        }
+        struct Response
+        {
+        }
+        struct ViewModel
+        {
+        }
     }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
-  }
 }

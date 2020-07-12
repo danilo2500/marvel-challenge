@@ -12,9 +12,8 @@
 
 import UIKit
 
-class CharactersWorker
-{
-  func doSomeWork()
-  {
-  }
+class CharactersWorker {
+    func doSomeWork()
+    {
+    }
 }

@@ -12,30 +12,27 @@
 
 import UIKit
 
-protocol CharactersBusinessLogic
-{
-  func doSomething(request: Characters.Something.Request)
+protocol CharactersBusinessLogic {
+    func doSomething(request: Characters.Something.Request)
 }
 
-protocol CharactersDataStore
-{
-  //var name: String { get set }
+protocol CharactersDataStore {
+    //var name: String { get set }
 }
 
-class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore
-{
-  var presenter: CharactersPresentationLogic?
-  var worker: CharactersWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: Characters.Something.Request)
-  {
-    worker = CharactersWorker()
-    worker?.doSomeWork()
+class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
     
-    let response = Characters.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    var presenter: CharactersPresentationLogic?
+    var worker: CharactersWorker? = CharactersWorker()
+    
+    
+    // MARK: Business Logic
+    
+    func doSomething(request: Characters.Something.Request) {
+        worker = CharactersWorker()
+        worker?.doSomeWork()
+        
+        let response = Characters.Something.Response()
+        presenter?.presentSomething(response: response)
+    }
 }

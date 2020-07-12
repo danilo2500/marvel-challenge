@@ -12,20 +12,18 @@
 
 import UIKit
 
-protocol CharactersPresentationLogic
-{
-  func presentSomething(response: Characters.Something.Response)
+protocol CharactersPresentationLogic {
+    func presentSomething(response: Characters.Something.Response)
 }
 
-class CharactersPresenter: CharactersPresentationLogic
-{
-  weak var viewController: CharactersDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: Characters.Something.Response)
-  {
-    let viewModel = Characters.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+class CharactersPresenter: CharactersPresentationLogic {
+    
+    weak var viewController: CharactersDisplayLogic?
+    
+    // MARK: Do something
+    
+    func presentSomething(response: Characters.Something.Response) {
+        let viewModel = Characters.Something.ViewModel()
+        viewController?.displaySomething(viewModel: viewModel)
+    }
 }
