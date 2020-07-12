@@ -10,10 +10,21 @@
 //  see http://clean-swift.com
 //
 
-import UIKit
+import Foundation
+
+protocol CharactersWorkerManager {
+    func getCharacters(completion: @escaping (Result<CharacterDataWrapperModel, Error>) -> Void)
+}
 
 class CharactersWorker {
-    func doSomeWork()
-    {
+    
+    let manager: CharactersWorkerManager
+    
+    init(manager: CharactersWorkerManager) {
+        self.manager = manager
+    }
+    
+    func requestCharacters(completion: @escaping (Result<CharacterDataWrapperModel, Error>) -> Void ) {
+        manager.getCharacters(completion: completion)
     }
 }

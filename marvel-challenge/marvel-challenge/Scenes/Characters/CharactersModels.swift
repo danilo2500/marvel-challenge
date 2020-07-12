@@ -10,21 +10,27 @@
 //  see http://clean-swift.com
 //
 
-import Foundation
+import UIKit
 
 enum Characters {
     
     // MARK: Use cases
     
-    enum Something {
-        struct Request
-        {
+    enum GetCharacters {
+        struct Response {
+            let character: CharacterDataWrapperModel
         }
-        struct Response
-        {
+        struct ViewModel {
+            let displayedCharacters: [DisplayedCharacter]
         }
-        struct ViewModel
-        {
-        }
+    }
+    
+    struct DisplayedCharacter {
+        let name: String
+    }
+    
+    enum Error {
+        case emptyList
+        case unexpectedError
     }
 }

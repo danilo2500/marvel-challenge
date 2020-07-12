@@ -25,8 +25,15 @@ class MainTabBarController: UITabBarController {
     //MARK: Private Functions
     
     private func setup() {
+        //Characters
         let charactersViewController = CharactersFactory.makeController()
-        viewControllers = [charactersViewController]
+        let charactersNavigationController = UINavigationController(rootViewController: charactersViewController)
+        
+        //Favorites
+        let favoritesViewController = FavoritesFactory.makeController()
+        let favoritesNavigationController = UINavigationController(rootViewController: favoritesViewController)
+        
+        viewControllers = [charactersNavigationController, favoritesNavigationController]
     }
     
 }

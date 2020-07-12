@@ -13,17 +13,33 @@
 import UIKit
 
 protocol CharactersPresentationLogic {
-    func presentSomething(response: Characters.Something.Response)
+    func presentCharacters(response: Characters.GetCharacters.Response)
+    func presentError(_ error: Characters.Error)
 }
 
 class CharactersPresenter: CharactersPresentationLogic {
     
     weak var viewController: CharactersDisplayLogic?
     
-    // MARK: Do something
+    // MARK: Presentation Logic
     
-    func presentSomething(response: Characters.Something.Response) {
-        let viewModel = Characters.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func presentCharacters(response: Characters.GetCharacters.Response) {
+        
+        guard let results = response.character.data?.results, !results.isEmpty else {
+            viewController?.displayError(.emptyList)
+            return
+        }
+        
+        let displayedCharacters = results.map { (character) -> Characters.DisplayedCharacter in
+            let name = character.name ?? "-"
+            return Characters.DisplayedCharacter(name: name)
+        }
+        
+        let viewModel = Characters.GetCharacters.ViewModel(displayedCharacters: displayedCharacters)
+        viewController?.displayCharacters(viewModel: viewModel)
+    }
+    
+    func presentError(_ error: Characters.Error) {
+        viewController?.displayError(error)
     }
 }

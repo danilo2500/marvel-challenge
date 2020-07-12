@@ -13,26 +13,31 @@
 import UIKit
 
 protocol CharactersBusinessLogic {
-    func doSomething(request: Characters.Something.Request)
+    func requestCharacters()
 }
 
 protocol CharactersDataStore {
-    //var name: String { get set }
+    
 }
 
 class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
     
     var presenter: CharactersPresentationLogic?
-    var worker: CharactersWorker? = CharactersWorker()
-    
+    var worker: CharactersWorker? = CharactersWorker(manager: CharactersNetworkManager())
     
     // MARK: Business Logic
     
-    func doSomething(request: Characters.Something.Request) {
-        worker = CharactersWorker()
-        worker?.doSomeWork()
-        
-        let response = Characters.Something.Response()
-        presenter?.presentSomething(response: response)
+    func requestCharacters() {
+        worker?.requestCharacters(completion: { [weak self] (result) in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let character):
+                let response = Characters.GetCharacters.Response(character: character)
+                self.presenter?.presentCharacters(response: response)
+            case .failure:
+                self.presenter?.presentError(.unexpectedError)
+            }
+        })
     }
 }

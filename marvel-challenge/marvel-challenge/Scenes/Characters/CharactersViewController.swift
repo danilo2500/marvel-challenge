@@ -8,10 +8,11 @@
 import UIKit
 
 protocol CharactersDisplayLogic: AnyObject {
-    func displaySomething(viewModel: Characters.Something.ViewModel)
+    func displayCharacters(viewModel: Characters.GetCharacters.ViewModel)
+    func displayError(_ error: Characters.Error)
 }
 
-class CharactersViewController: UIViewController, CharactersDisplayLogic {
+class CharactersViewController: UIViewController {
     
     var interactor: CharactersBusinessLogic?
     var router: (NSObjectProtocol & CharactersRoutingLogic & CharactersDataPassing)?
@@ -20,21 +21,26 @@ class CharactersViewController: UIViewController, CharactersDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        requestCharacters()
+    }
+    
+    // MARK: Private Functions
+    
+    private func requestCharacters() {
+        interactor?.requestCharacters()
+    }
+}
+
+// MARK: Display Logic
+
+extension CharactersViewController: CharactersDisplayLogic {
+    
+    func displayCharacters(viewModel: Characters.GetCharacters.ViewModel) {
         
     }
     
-    // MARK: Do something
-    
-    //@IBOutlet weak var nameTextField: UITextField!
-    
-    func requestCharacters()
-    {
-        let request = Characters.Something.Request()
-        interactor?.doSomething(request: request)
+    func displayError(_ error: Characters.Error) {
+        
     }
     
-    func displaySomething(viewModel: Characters.Something.ViewModel)
-    {
-        //nameTextField.text = viewModel.name
-    }
 }
