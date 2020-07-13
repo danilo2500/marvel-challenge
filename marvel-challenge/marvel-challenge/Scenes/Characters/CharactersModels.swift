@@ -18,15 +18,42 @@ enum Characters {
     
     enum GetCharacters {
         struct Response {
-            let character: CharacterDataWrapperModel
+            let results: [CharacterModel]
         }
         struct ViewModel {
             let displayedCharacters: [DisplayedCharacter]
         }
     }
     
+    enum SearchCharacters {
+        struct Request {
+            let searchText: String
+        }
+        struct Response {
+            let results: [CharacterModel]
+        }
+        struct ViewModel {
+            let displayedCharacters: [DisplayedCharacter]
+        }
+    }
+    
+    // MARK: Use cases
+    
+    enum SaveInFavorite {
+        struct Request {
+            let indexPath: IndexPath
+        }
+        struct Response {
+            
+        }
+        struct ViewModel {
+            
+        }
+    }
+    
     struct DisplayedCharacter {
         let name: String
+        let isFavorited: Bool
     }
     
     enum Error {

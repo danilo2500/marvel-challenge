@@ -14,6 +14,7 @@ import UIKit
 
 protocol CharactersPresentationLogic {
     func presentCharacters(response: Characters.GetCharacters.Response)
+    func presentSearchCharacters(response: Characters.SearchCharacters.Response)
     func presentError(_ error: Characters.Error)
 }
 
@@ -24,22 +25,28 @@ class CharactersPresenter: CharactersPresentationLogic {
     // MARK: Presentation Logic
     
     func presentCharacters(response: Characters.GetCharacters.Response) {
-        
-        guard let results = response.character.data?.results, !results.isEmpty else {
-            viewController?.displayError(.emptyList)
-            return
-        }
-        
-        let displayedCharacters = results.map { (character) -> Characters.DisplayedCharacter in
-            let name = character.name ?? "-"
-            return Characters.DisplayedCharacter(name: name)
-        }
+        let displayedCharacters = response.results.map({createDisplayedCharacter(with: $0)})
         
         let viewModel = Characters.GetCharacters.ViewModel(displayedCharacters: displayedCharacters)
         viewController?.displayCharacters(viewModel: viewModel)
     }
     
+    func presentSearchCharacters(response: Characters.SearchCharacters.Response) {
+        let displayedCharacters = response.results.map({createDisplayedCharacter(with: $0)})
+        
+        let viewModel = Characters.SearchCharacters.ViewModel(displayedCharacters: displayedCharacters)
+        viewController?.displaySearchedCharacters(viewModel: viewModel)
+    }
+    
     func presentError(_ error: Characters.Error) {
         viewController?.displayError(error)
+    }
+    
+    // MARK: Private Functions
+    
+    private func createDisplayedCharacter(with character: CharacterModel) -> Characters.DisplayedCharacter {
+        let name = character.name ?? "-"
+        let displayedCharacter = Characters.DisplayedCharacter(name: name, isFavorited: false)
+        return displayedCharacter
     }
 }

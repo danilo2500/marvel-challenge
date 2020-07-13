@@ -10,6 +10,7 @@ import NVActivityIndicatorView
 
 protocol CharactersDisplayLogic: AnyObject {
     func displayCharacters(viewModel: Characters.GetCharacters.ViewModel)
+    func displaySearchedCharacters(viewModel: Characters.SearchCharacters.ViewModel)
     func displayError(_ error: Characters.Error)
 }
 
@@ -23,22 +24,15 @@ class CharactersViewController: UITableViewController {
     let cellReuseIdentifier = String(describing: UITableViewCell.self)
     
     // MARK: Variables
+    
     var viewModel: Characters.GetCharacters.ViewModel?
+    var searchedViewModel: Characters.SearchCharacters.ViewModel?
     
     // MARK: Computed Propierties
     
     var isSearching: Bool {
-        return searchController.searchBar.text?.isEmpty ?? false
-    }
-    
-    var searchedCharacters: [Characters.DisplayedCharacter] {
-        guard let viewModel = viewModel else { return [] }
         let searchText = searchController.searchBar.text ?? ""
-        let options: String.CompareOptions = [.caseInsensitive, .diacriticInsensitive]
-        let searchedCharacters = viewModel.displayedCharacters.filter { (character) -> Bool in
-            return character.name.range(of: searchText, options: options) != nil
-        }
-        return searchedCharacters
+        return !searchText.isEmpty
     }
     
     // MARK: UI Elements
@@ -50,7 +44,6 @@ class CharactersViewController: UITableViewController {
         searchController.searchResultsUpdater = self
         return searchController
     }()
-    
     
     // MARK: View lifecycle
     
@@ -74,6 +67,14 @@ class CharactersViewController: UITableViewController {
         loadingActivityIndicator.startAnimating()
         interactor?.requestCharacters()
     }
+    
+    private func getDisplayedCharacter(at indexPath: IndexPath) -> Characters.DisplayedCharacter? {
+        if isSearching {
+            return searchedViewModel?.displayedCharacters[indexPath.row]
+        } else {
+            return viewModel?.displayedCharacters[indexPath.row]
+        }
+    }
 }
 
 // MARK: Display Logic
@@ -83,6 +84,11 @@ extension CharactersViewController: CharactersDisplayLogic {
     func displayCharacters(viewModel: Characters.GetCharacters.ViewModel) {
         loadingActivityIndicator.stopAnimating()
         self.viewModel = viewModel
+        tableView.reloadData()
+    }
+    
+    func displaySearchedCharacters(viewModel: Characters.SearchCharacters.ViewModel) {
+        self.searchedViewModel = viewModel
         tableView.reloadData()
     }
     
@@ -98,38 +104,30 @@ extension CharactersViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isSearching {
-            return viewModel?.displayedCharacters.count ?? 0
+            return searchedViewModel?.displayedCharacters.count ?? 0
         } else {
-            return searchedCharacters.count
+            return viewModel?.displayedCharacters.count ?? 0
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let viewModel = viewModel else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
-        
-        let displayedCharacter: Characters.DisplayedCharacter = {
-            if isSearching {
-                return viewModel.displayedCharacters[indexPath.row]
-            } else {
-                return searchedCharacters[indexPath.row]
-            }
-        }()
-        
-        cell.textLabel?.text = displayedCharacter.name
-        
+        let displayedCharacter = getDisplayedCharacter(at: indexPath)
+        cell.textLabel?.text = displayedCharacter?.name
         return cell
     }
     
     //MARK: Swipe Action
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let handler: UIContextualAction.Handler = { (action, sourceView, completion) in
-            
+        let displayedCharacter = getDisplayedCharacter(at: indexPath)
+        
+        let action = FavoriteContextualAction { (action, sourceView, completion) in
+            let action = action as? FavoriteContextualAction
+            action?.isFavorite = displayedCharacter?.isFavorited ?? false
+            completion(true)
         }
-        let action = FavoriteContextualAction(handler: handler)
-        action.isFavorite = false
+        
         let swipeActionsConfiguration = UISwipeActionsConfiguration(actions: [action])
-        swipeActionsConfiguration.performsFirstActionWithFullSwipe = true
         return swipeActionsConfiguration
     }
 }
@@ -138,6 +136,8 @@ extension CharactersViewController {
 
 extension CharactersViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        tableView.reloadData()
+        let searchText = searchController.searchBar.text ?? ""
+        let request = Characters.SearchCharacters.Request(searchText: searchText)
+        interactor?.searchCharacters(request: request)
     }
 }

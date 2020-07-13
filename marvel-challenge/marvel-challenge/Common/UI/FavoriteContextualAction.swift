@@ -29,13 +29,9 @@ class FavoriteContextualAction: UIContextualAction {
     
     convenience init(handler: @escaping UIContextualAction.Handler) {
         self.init(style: .normal, title: nil, handler: handler)
-
         setup()
     }
     
-    func changeColor() {
-        backgroundColor = .yellow
-    }
     //MARK: Private Functions
     
     private func setup() {
