@@ -48,7 +48,6 @@ class CharactersViewController: UITableViewController {
     lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
-        searchController.searchBar.placeholder = "Pesquisar"
         return searchController
     }()
     
@@ -68,6 +67,7 @@ class CharactersViewController: UITableViewController {
         navigationItem.searchController = searchController
         title = "Hérois"
         view.addSubview(loadingActivityIndicator)
+        
     }
     
     private func requestCharacters() {
@@ -119,6 +119,18 @@ extension CharactersViewController {
         cell.textLabel?.text = displayedCharacter.name
         
         return cell
+    }
+    
+    //MARK: Swipe Action
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let handler: UIContextualAction.Handler = { (action, sourceView, completion) in
+            
+        }
+        let action = FavoriteContextualAction(handler: handler)
+        action.isFavorite = false
+        let swipeActionsConfiguration = UISwipeActionsConfiguration(actions: [action])
+        swipeActionsConfiguration.performsFirstActionWithFullSwipe = true
+        return swipeActionsConfiguration
     }
 }
 

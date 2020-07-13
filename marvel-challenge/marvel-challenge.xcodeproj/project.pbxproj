@@ -53,6 +53,7 @@
 		1D76367924BAA788003F08B3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D76367824BAA788003F08B3 /* MainTabBarController.swift */; };
 		1D8D2A7724BAA900001EC399 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D8D2A7624BAA900001EC399 /* Default-568h@2x.png */; };
 		1DB329BD24BB7F49001B4C90 /* MarvelNavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB329BC24BB7F49001B4C90 /* MarvelNavigationTitle.swift */; };
+		1DB329BF24BBDE1F001B4C90 /* FavoriteContextualAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB329BE24BBDE1F001B4C90 /* FavoriteContextualAction.swift */; };
 		40554EF9BAFD75C9EB14B4E3 /* Pods_marvel_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA043014F60F4E5FA0BB47D1 /* Pods_marvel_challenge.framework */; };
 		B8B7801E8AF1FF53BB047045 /* Pods_marvel_challenge_marvel_challengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB072EA4692C3899C1642008 /* Pods_marvel_challenge_marvel_challengeUITests.framework */; };
 		D96D3B52950B6B464034951F /* Pods_marvel_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B768F76B1A77B18AC2F77950 /* Pods_marvel_challengeTests.framework */; };
@@ -130,6 +131,7 @@
 		1D76367824BAA788003F08B3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1D8D2A7624BAA900001EC399 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1DB329BC24BB7F49001B4C90 /* MarvelNavigationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelNavigationTitle.swift; sourceTree = "<group>"; };
+		1DB329BE24BBDE1F001B4C90 /* FavoriteContextualAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteContextualAction.swift; sourceTree = "<group>"; };
 		272D38A53B7B923AE8F04617 /* Pods-marvel-challengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvel-challengeTests.debug.xcconfig"; path = "Target Support Files/Pods-marvel-challengeTests/Pods-marvel-challengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3C6EDB5DA018F2BD06BE3DA0 /* Pods-marvel-challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvel-challenge.debug.xcconfig"; path = "Target Support Files/Pods-marvel-challenge/Pods-marvel-challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		5C167842AD65F850FA417A24 /* Pods-marvel-challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvel-challenge.release.xcconfig"; path = "Target Support Files/Pods-marvel-challenge/Pods-marvel-challenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				1DB329BC24BB7F49001B4C90 /* MarvelNavigationTitle.swift */,
+				1DB329BE24BBDE1F001B4C90 /* FavoriteContextualAction.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				1DB329BD24BB7F49001B4C90 /* MarvelNavigationTitle.swift in Sources */,
 				1D6F65B024BAC2D000F3B5A9 /* FavoritesWorker.swift in Sources */,
 				1D76362D24BAA03C003F08B3 /* marvel_challenge.xcdatamodeld in Sources */,
+				1DB329BF24BBDE1F001B4C90 /* FavoriteContextualAction.swift in Sources */,
 				1D6F65B424BAC2D000F3B5A9 /* FavoritesInteractor.swift in Sources */,
 				1D71248024BAB69A0047D53B /* CharacterDataWrapperModel.swift in Sources */,
 				1D6F65B324BAC2D000F3B5A9 /* FavoritesViewController.swift in Sources */,
@@ -843,6 +847,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/marvel-challenge/Base/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -861,6 +866,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/marvel-challenge/Base/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
