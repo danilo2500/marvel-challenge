@@ -27,10 +27,10 @@ class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
     var presenter: CharactersPresentationLogic?
     var worker: CharactersWorker? = CharactersWorker(manager: CharactersNetworkManager())
     
-    // MARK: Variables
+    // MARK: Private Variables
     private var isSearching: Bool { !searchedCharacters.isEmpty }
     private var characterDataWrapper: CharacterDataWrapperModel?
-    private var allCharacters: [CharacterModel] = []2
+    private var allCharacters: [CharacterModel] = []
     private var searchedCharacters: [CharacterModel] = []
     
     // MARK: Business Logic

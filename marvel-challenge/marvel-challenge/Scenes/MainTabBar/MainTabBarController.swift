@@ -10,6 +10,21 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     
+    
+    let charactersNavigationController: UINavigationController = {
+        let viewController = CharactersFactory.makeController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.tabBarItem.image = UIImage.init(named: "avengers-icon")
+        return navigationController
+    }()
+    
+    let favoritesNavigationController: UINavigationController = {
+        let viewController = FavoritesFactory.makeController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+//        navigationController.tabBarItem.image = UIImage.init(systemName: "avengers-icon")
+        return navigationController
+    }()
+    
     //MARK: Object Initialization
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -25,14 +40,6 @@ class MainTabBarController: UITabBarController {
     //MARK: Private Functions
     
     private func setup() {
-        //Characters
-        let charactersViewController = CharactersFactory.makeController()
-        let charactersNavigationController = UINavigationController(rootViewController: charactersViewController)
-        
-        //Favorites
-        let favoritesViewController = FavoritesFactory.makeController()
-        let favoritesNavigationController = UINavigationController(rootViewController: favoritesViewController)
-        
         viewControllers = [charactersNavigationController, favoritesNavigationController]
     }
     
