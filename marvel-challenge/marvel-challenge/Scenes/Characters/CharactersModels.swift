@@ -53,7 +53,7 @@ enum Characters {
     
     struct DisplayedCharacter {
         let name: String
-        let isFavorited: Bool
+        var isFavorited: Bool
     }
     
     enum Error {

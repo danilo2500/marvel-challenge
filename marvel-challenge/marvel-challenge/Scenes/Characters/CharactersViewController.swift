@@ -24,7 +24,7 @@ class CharactersViewController: UITableViewController {
     let cellReuseIdentifier = String(describing: UITableViewCell.self)
     
     // MARK: Variables
-    
+    var dispatchWorkItem = DispatchWorkItem {}
     var viewModel: Characters.GetCharacters.ViewModel?
     var searchedViewModel: Characters.SearchCharacters.ViewModel?
     
@@ -37,10 +37,9 @@ class CharactersViewController: UITableViewController {
     
     // MARK: UI Elements
     
-    lazy var loadingActivityIndicator = NVActivityIndicatorView(frame: view.frame, type: .ballRotateChase, color: .red)
-    
     lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
+        searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
         return searchController
     }()
@@ -56,16 +55,20 @@ class CharactersViewController: UITableViewController {
     // MARK: Private Functions
     
     private func setupUI() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-        navigationItem.searchController = searchController
         title = "Hérois"
-        view.addSubview(loadingActivityIndicator)
-        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        tableView.keyboardDismissMode = .interactive
+        navigationItem.searchController = searchController
     }
     
     private func requestCharacters() {
-        loadingActivityIndicator.startAnimating()
+        LoadingView.show()
         interactor?.requestCharacters()
+    }
+    
+    private func saveCharacterOnFavorite(at indexPath: IndexPath) {
+        let request = Characters.SaveInFavorite.Request(indexPath: indexPath)
+        interactor?.saveCharacterInFavorite(request: request)
     }
     
     private func getDisplayedCharacter(at indexPath: IndexPath) -> Characters.DisplayedCharacter? {
@@ -82,7 +85,7 @@ class CharactersViewController: UITableViewController {
 extension CharactersViewController: CharactersDisplayLogic {
     
     func displayCharacters(viewModel: Characters.GetCharacters.ViewModel) {
-        loadingActivityIndicator.stopAnimating()
+        LoadingView.dismiss()
         self.viewModel = viewModel
         tableView.reloadData()
     }
@@ -93,9 +96,8 @@ extension CharactersViewController: CharactersDisplayLogic {
     }
     
     func displayError(_ error: Characters.Error) {
-        loadingActivityIndicator.stopAnimating()
+        LoadingView.dismiss()
     }
-    
 }
 
 // MARK: TableView Data Source
@@ -119,14 +121,14 @@ extension CharactersViewController {
     
     //MARK: Swipe Action
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let displayedCharacter = getDisplayedCharacter(at: indexPath)
-        
+        var displayedCharacter = self.getDisplayedCharacter(at: indexPath)
         let action = FavoriteContextualAction { (action, sourceView, completion) in
-            let action = action as? FavoriteContextualAction
-            action?.isFavorite = displayedCharacter?.isFavorited ?? false
+            self.saveCharacterOnFavorite(at: indexPath)
+            displayedCharacter?.isFavorited = true
             completion(true)
+            self.tableView.reloadData()
         }
-        
+        action.isFavorite = displayedCharacter!.isFavorited
         let swipeActionsConfiguration = UISwipeActionsConfiguration(actions: [action])
         return swipeActionsConfiguration
     }
@@ -136,8 +138,13 @@ extension CharactersViewController {
 
 extension CharactersViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        let searchText = searchController.searchBar.text ?? ""
-        let request = Characters.SearchCharacters.Request(searchText: searchText)
-        interactor?.searchCharacters(request: request)
+        dispatchWorkItem.cancel()
+        dispatchWorkItem = DispatchWorkItem(block: { [weak self] in
+            guard let self = self else { return }
+            let searchText = searchController.searchBar.text ?? ""
+            let request = Characters.SearchCharacters.Request(searchText: searchText)
+            self.interactor?.searchCharacters(request: request)
+        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: dispatchWorkItem)
     }
 }

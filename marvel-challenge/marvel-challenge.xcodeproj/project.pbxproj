@@ -52,6 +52,8 @@
 		1D76367324BAA715003F08B3 /* CharactersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D76367224BAA715003F08B3 /* CharactersFactory.swift */; };
 		1D76367924BAA788003F08B3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D76367824BAA788003F08B3 /* MainTabBarController.swift */; };
 		1D8D2A7724BAA900001EC399 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D8D2A7624BAA900001EC399 /* Default-568h@2x.png */; };
+		1D8DC87B24BD375D005BA6D0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8DC87A24BD375D005BA6D0 /* LoadingView.swift */; };
+		1D8DC87E24BD3E5A005BA6D0 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8DC87D24BD3E59005BA6D0 /* UIApplication+Extensions.swift */; };
 		1DB329BD24BB7F49001B4C90 /* MarvelNavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB329BC24BB7F49001B4C90 /* MarvelNavigationTitle.swift */; };
 		1DB329BF24BBDE1F001B4C90 /* FavoriteContextualAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB329BE24BBDE1F001B4C90 /* FavoriteContextualAction.swift */; };
 		40554EF9BAFD75C9EB14B4E3 /* Pods_marvel_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA043014F60F4E5FA0BB47D1 /* Pods_marvel_challenge.framework */; };
@@ -130,6 +132,8 @@
 		1D76367224BAA715003F08B3 /* CharactersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersFactory.swift; sourceTree = "<group>"; };
 		1D76367824BAA788003F08B3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1D8D2A7624BAA900001EC399 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1D8DC87A24BD375D005BA6D0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		1D8DC87D24BD3E59005BA6D0 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		1DB329BC24BB7F49001B4C90 /* MarvelNavigationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelNavigationTitle.swift; sourceTree = "<group>"; };
 		1DB329BE24BBDE1F001B4C90 /* FavoriteContextualAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteContextualAction.swift; sourceTree = "<group>"; };
 		272D38A53B7B923AE8F04617 /* Pods-marvel-challengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvel-challengeTests.debug.xcconfig"; path = "Target Support Files/Pods-marvel-challengeTests/Pods-marvel-challengeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 		1D76365524BAA098003F08B3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1D8DC87C24BD3E41005BA6D0 /* Extensions */,
 				1D6F65B624BACD5C00F3B5A9 /* Helpers */,
 				1D76367524BAA763003F08B3 /* UI */,
 				1D76365A24BAA30D003F08B3 /* Modules */,
@@ -364,6 +369,7 @@
 			children = (
 				1DB329BC24BB7F49001B4C90 /* MarvelNavigationTitle.swift */,
 				1DB329BE24BBDE1F001B4C90 /* FavoriteContextualAction.swift */,
+				1D8DC87A24BD375D005BA6D0 /* LoadingView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -374,6 +380,14 @@
 				1D76367824BAA788003F08B3 /* MainTabBarController.swift */,
 			);
 			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		1D8DC87C24BD3E41005BA6D0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1D8DC87D24BD3E59005BA6D0 /* UIApplication+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		3A8AE01C4EC81C9542807A10 /* Frameworks */ = {
@@ -640,10 +654,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D76366A24BAA6C1003F08B3 /* CharactersPresenter.swift in Sources */,
+				1D8DC87E24BD3E5A005BA6D0 /* UIApplication+Extensions.swift in Sources */,
 				1D71248224BAB69A0047D53B /* StoriesModel.swift in Sources */,
 				1D76366C24BAA6C1003F08B3 /* CharactersRouter.swift in Sources */,
 				1D76367924BAA788003F08B3 /* MainTabBarController.swift in Sources */,
 				1D71248424BAB9370047D53B /* StorySummaryModel.swift in Sources */,
+				1D8DC87B24BD375D005BA6D0 /* LoadingView.swift in Sources */,
 				1D76362324BAA03C003F08B3 /* AppDelegate.swift in Sources */,
 				1D71248824BAB9A00047D53B /* EventSummaryModel.swift in Sources */,
 				1DB329BD24BB7F49001B4C90 /* MarvelNavigationTitle.swift in Sources */,
