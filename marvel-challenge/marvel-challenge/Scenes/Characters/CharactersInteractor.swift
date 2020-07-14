@@ -30,7 +30,7 @@ class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
     // MARK: Variables
     private var isSearching: Bool { !searchedCharacters.isEmpty }
     private var characterDataWrapper: CharacterDataWrapperModel?
-    private var allCharacters: [CharacterModel] = []
+    private var allCharacters: [CharacterModel] = []2
     private var searchedCharacters: [CharacterModel] = []
     
     // MARK: Business Logic
@@ -60,23 +60,19 @@ class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
     }
     
     func searchCharacters(request: Characters.SearchCharacters.Request) {
-        guard let results = characterDataWrapper?.data?.results, !results.isEmpty else {
-            presenter?.presentError(.emptyList)
-            return
+        if request.searchText.isEmpty {
+            let response = Characters.GetCharacters.Response(results: allCharacters)
+            presenter?.presentCharacters(response: response)
+        } else {
+            searchedCharacters = searchCharacters(allCharacters, with: request.searchText)
+            let response = Characters.GetCharacters.Response(results: searchedCharacters)
+            presenter?.presentCharacters(response: response)
         }
-
-        let options: String.CompareOptions = [.caseInsensitive, .diacriticInsensitive]
-        searchedCharacters = results.filter { (character) -> Bool in
-            return character.name?.range(of: request.searchText, options: options) != nil
-        }
-        
-        let response = Characters.SearchCharacters.Response(results: searchedCharacters)
-        presenter?.presentSearchCharacters(response: response)
     }
     
     func saveCharacterInFavorite(request: Characters.SaveInFavorite.Request) {
         let charactedSelected = getCharacterSelected(at: request.indexPath)
-        print(charactedSelected.name)
+        
     }
     
     private func getCharacterSelected(at indexPath: IndexPath) -> CharacterModel {
@@ -85,5 +81,13 @@ class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
         } else {
             return allCharacters[indexPath.row]
         }
+    }
+    
+    private func searchCharacters(_ characters: [CharacterModel], with text: String) -> [CharacterModel] {
+        let options: String.CompareOptions = [.caseInsensitive, .diacriticInsensitive]
+        let searchedCharacters = characters.filter { (character) -> Bool in
+            return character.name?.range(of: text, options: options) != nil
+        }
+        return searchedCharacters
     }
 }

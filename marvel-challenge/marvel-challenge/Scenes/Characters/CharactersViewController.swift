@@ -26,14 +26,6 @@ class CharactersViewController: UITableViewController {
     // MARK: Variables
     var dispatchWorkItem = DispatchWorkItem {}
     var viewModel: Characters.GetCharacters.ViewModel?
-    var searchedViewModel: Characters.SearchCharacters.ViewModel?
-    
-    // MARK: Computed Propierties
-    
-    var isSearching: Bool {
-        let searchText = searchController.searchBar.text ?? ""
-        return !searchText.isEmpty
-    }
     
     // MARK: UI Elements
     
@@ -71,13 +63,13 @@ class CharactersViewController: UITableViewController {
         interactor?.saveCharacterInFavorite(request: request)
     }
     
-    private func getDisplayedCharacter(at indexPath: IndexPath) -> Characters.DisplayedCharacter? {
-        if isSearching {
-            return searchedViewModel?.displayedCharacters[indexPath.row]
-        } else {
-            return viewModel?.displayedCharacters[indexPath.row]
-        }
-    }
+//    private func getDisplayedCharacter(at indexPath: IndexPath) -> Characters.DisplayedCharacter? {
+//        if isSearching {
+//            return searchedViewModel?.displayedCharacters[indexPath.row]
+//        } else {
+//            return viewModel?.displayedCharacters[indexPath.row]
+//        }
+//    }
 }
 
 // MARK: Display Logic
@@ -91,7 +83,7 @@ extension CharactersViewController: CharactersDisplayLogic {
     }
     
     func displaySearchedCharacters(viewModel: Characters.SearchCharacters.ViewModel) {
-        self.searchedViewModel = viewModel
+//        self.searchedViewModel = viewModel
         tableView.reloadData()
     }
     
@@ -105,23 +97,19 @@ extension CharactersViewController: CharactersDisplayLogic {
 extension CharactersViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isSearching {
-            return searchedViewModel?.displayedCharacters.count ?? 0
-        } else {
-            return viewModel?.displayedCharacters.count ?? 0
-        }
+        return viewModel?.displayedCharacters.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
-        let displayedCharacter = getDisplayedCharacter(at: indexPath)
+        let displayedCharacter = viewModel?.displayedCharacters[indexPath.row]
         cell.textLabel?.text = displayedCharacter?.name
         return cell
     }
     
     //MARK: Swipe Action
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        var displayedCharacter = self.getDisplayedCharacter(at: indexPath)
+        var displayedCharacter = viewModel?.displayedCharacters[indexPath.row]
         let action = FavoriteContextualAction { (action, sourceView, completion) in
             self.saveCharacterOnFavorite(at: indexPath)
             displayedCharacter?.isFavorited = true
