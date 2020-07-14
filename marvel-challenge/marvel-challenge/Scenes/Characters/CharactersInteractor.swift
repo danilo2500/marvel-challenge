@@ -72,7 +72,7 @@ class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
     
     func saveCharacterInFavorite(request: Characters.SaveInFavorite.Request) {
         let charactedSelected = getCharacterSelected(at: request.indexPath)
-        
+        print(charactedSelected)
     }
     
     private func getCharacterSelected(at indexPath: IndexPath) -> CharacterModel {

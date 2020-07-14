@@ -21,7 +21,6 @@ class MainTabBarController: UITabBarController {
     let favoritesNavigationController: UINavigationController = {
         let viewController = FavoritesFactory.makeController()
         let navigationController = UINavigationController(rootViewController: viewController)
-//        navigationController.tabBarItem.image = UIImage.init(systemName: "avengers-icon")
         return navigationController
     }()
     

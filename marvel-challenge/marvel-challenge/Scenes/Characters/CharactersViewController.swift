@@ -63,13 +63,11 @@ class CharactersViewController: UITableViewController {
         interactor?.saveCharacterInFavorite(request: request)
     }
     
-//    private func getDisplayedCharacter(at indexPath: IndexPath) -> Characters.DisplayedCharacter? {
-//        if isSearching {
-//            return searchedViewModel?.displayedCharacters[indexPath.row]
-//        } else {
-//            return viewModel?.displayedCharacters[indexPath.row]
-//        }
-//    }
+    private func searchCharacters() {
+        let searchText = searchController.searchBar.text ?? ""
+        let request = Characters.SearchCharacters.Request(searchText: searchText)
+        self.interactor?.searchCharacters(request: request)
+    }
 }
 
 // MARK: Display Logic
@@ -116,7 +114,7 @@ extension CharactersViewController {
             completion(true)
             self.tableView.reloadData()
         }
-        action.isFavorite = displayedCharacter!.isFavorited
+        action.isFavorite = displayedCharacter?.isFavorited ?? false
         let swipeActionsConfiguration = UISwipeActionsConfiguration(actions: [action])
         return swipeActionsConfiguration
     }
@@ -129,9 +127,7 @@ extension CharactersViewController: UISearchResultsUpdating {
         dispatchWorkItem.cancel()
         dispatchWorkItem = DispatchWorkItem(block: { [weak self] in
             guard let self = self else { return }
-            let searchText = searchController.searchBar.text ?? ""
-            let request = Characters.SearchCharacters.Request(searchText: searchText)
-            self.interactor?.searchCharacters(request: request)
+            self.searchCharacters()
         })
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: dispatchWorkItem)
     }

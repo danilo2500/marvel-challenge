@@ -37,18 +37,25 @@ class LoadingView: UIView {
     }
     
     static func dismiss() {
-        shared.removeFromSuperview()
-    }
-    
-    func setup() {
-        backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        UIView.animate(withDuration: 0.5, animations: {
+            shared.alpha = 0
+        }) { (_) in
+            shared.removeFromSuperview()
+        }
     }
     
     //MARK: Private Functions
     
+    func setup() {
+        backgroundColor = UIColor.black.withAlphaComponent(0)
+    }
+    
     private func addSelfOnWindow() {
         let window = UIApplication.shared.currentWindow
         window?.addSubview(self)
+        UIView.animate(withDuration: 0.5) {
+            self.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        }
     }
     
     private func addActivityView() {
@@ -59,7 +66,7 @@ class LoadingView: UIView {
         activity.translatesAutoresizingMaskIntoConstraints = false
         activity.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         activity.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        activity.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        activity.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        activity.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        activity.widthAnchor.constraint(equalToConstant: 50).isActive = true
     }
 }
