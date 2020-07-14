@@ -12,4 +12,7 @@ extension UIApplication {
     var currentWindow: UIWindow? {
         UIApplication.shared.windows.first(where: {$0.isKeyWindow})
     }
+    var appDelegate: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
 }

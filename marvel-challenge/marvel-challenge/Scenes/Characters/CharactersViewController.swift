@@ -10,7 +10,7 @@ import NVActivityIndicatorView
 
 protocol CharactersDisplayLogic: AnyObject {
     func displayCharacters(viewModel: Characters.GetCharacters.ViewModel)
-    func displaySearchedCharacters(viewModel: Characters.SearchCharacters.ViewModel)
+    func displaySaveCharacterInFavorite(viewModel: Characters.SaveInFavorite.ViewModel)
     func displayError(_ error: Characters.Error)
 }
 
@@ -80,9 +80,8 @@ extension CharactersViewController: CharactersDisplayLogic {
         tableView.reloadData()
     }
     
-    func displaySearchedCharacters(viewModel: Characters.SearchCharacters.ViewModel) {
-//        self.searchedViewModel = viewModel
-        tableView.reloadData()
+    func displaySaveCharacterInFavorite(viewModel: Characters.SaveInFavorite.ViewModel) {
+        
     }
     
     func displayError(_ error: Characters.Error) {
@@ -107,12 +106,9 @@ extension CharactersViewController {
     
     //MARK: Swipe Action
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        var displayedCharacter = viewModel?.displayedCharacters[indexPath.row]
         let action = FavoriteContextualAction { (action, sourceView, completion) in
             self.saveCharacterOnFavorite(at: indexPath)
-            displayedCharacter?.isFavorited = true
             completion(true)
-            self.tableView.reloadData()
         }
         action.isFavorite = displayedCharacter?.isFavorited ?? false
         let swipeActionsConfiguration = UISwipeActionsConfiguration(actions: [action])

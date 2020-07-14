@@ -14,7 +14,6 @@ class FavoriteContextualAction: UIContextualAction {
     
     var isFavorite: Bool = false {
         didSet {
-            image = nil
             if isFavorite {
                 image = UIImage(named: "star-filled")
             } else {

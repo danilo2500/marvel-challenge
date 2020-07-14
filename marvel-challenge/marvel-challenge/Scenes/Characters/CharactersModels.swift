@@ -21,7 +21,7 @@ enum Characters {
             let results: [CharacterModel]
         }
         struct ViewModel {
-            let displayedCharacters: [DisplayedCharacter]
+            var displayedCharacters: [DisplayedCharacter]
         }
     }
     
@@ -44,10 +44,10 @@ enum Characters {
             let indexPath: IndexPath
         }
         struct Response {
-            
+            let indexPath: IndexPath
         }
         struct ViewModel {
-            
+            let indexPath: IndexPath
         }
     }
     

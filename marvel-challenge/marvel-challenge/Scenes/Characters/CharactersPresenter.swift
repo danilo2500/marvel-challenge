@@ -14,7 +14,7 @@ import UIKit
 
 protocol CharactersPresentationLogic {
     func presentCharacters(response: Characters.GetCharacters.Response)
-    func presentSearchCharacters(response: Characters.SearchCharacters.Response)
+    func presentSaveCharacterInFavorite(response: Characters.SaveInFavorite.Response)
     func presentError(_ error: Characters.Error)
 }
 
@@ -31,11 +31,9 @@ class CharactersPresenter: CharactersPresentationLogic {
         viewController?.displayCharacters(viewModel: viewModel)
     }
     
-    func presentSearchCharacters(response: Characters.SearchCharacters.Response) {
-        let displayedCharacters = response.results.map({createDisplayedCharacter(with: $0)})
-        
-        let viewModel = Characters.SearchCharacters.ViewModel(displayedCharacters: displayedCharacters)
-        viewController?.displaySearchedCharacters(viewModel: viewModel)
+    func presentSaveCharacterInFavorite(response: Characters.SaveInFavorite.Response) {
+        let viewModel = Characters.SaveInFavorite.ViewModel()
+        vi
     }
     
     func presentError(_ error: Characters.Error) {

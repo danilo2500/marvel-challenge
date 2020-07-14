@@ -25,18 +25,37 @@ protocol CharactersDataStore {
 class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
     
     var presenter: CharactersPresentationLogic?
-    var worker: CharactersWorker? = CharactersWorker(manager: CharactersNetworkManager())
+    var worker = CharactersWorker(manager: CharactersNetworkManager())
     
     // MARK: Private Variables
+    
     private var isSearching: Bool { !searchedCharacters.isEmpty }
     private var characterDataWrapper: CharacterDataWrapperModel?
     private var allCharacters: [CharacterModel] = []
     private var searchedCharacters: [CharacterModel] = []
     
+    // MARK: Private Functions
+    
+    private func getCharacterSelected(at indexPath: IndexPath) -> CharacterModel {
+        if isSearching {
+            return searchedCharacters[indexPath.row]
+        } else {
+            return allCharacters[indexPath.row]
+        }
+    }
+    
+    private func searchCharacters(_ characters: [CharacterModel], with text: String) -> [CharacterModel] {
+        let options: String.CompareOptions = [.caseInsensitive, .diacriticInsensitive]
+        let searchedCharacters = characters.filter { (character) -> Bool in
+            return character.name?.range(of: text, options: options) != nil
+        }
+        return searchedCharacters
+    }
+    
     // MARK: Business Logic
     
     func requestCharacters() {
-        worker?.requestCharacters(completion: { [weak self] (result) in
+        worker.requestCharacters(completion: { [weak self] (result) in
             guard let self = self else { return }
             
             switch result {
@@ -61,6 +80,7 @@ class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
     
     func searchCharacters(request: Characters.SearchCharacters.Request) {
         if request.searchText.isEmpty {
+            searchedCharacters = []
             let response = Characters.GetCharacters.Response(results: allCharacters)
             presenter?.presentCharacters(response: response)
         } else {
@@ -72,22 +92,14 @@ class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
     
     func saveCharacterInFavorite(request: Characters.SaveInFavorite.Request) {
         let charactedSelected = getCharacterSelected(at: request.indexPath)
-        print(charactedSelected)
-    }
-    
-    private func getCharacterSelected(at indexPath: IndexPath) -> CharacterModel {
-        if isSearching {
-            return searchedCharacters[indexPath.row]
-        } else {
-            return allCharacters[indexPath.row]
+        guard let name = charactedSelected.name, let id = charactedSelected.id else { return }
+        
+        worker.saveCharacterOnFavorite(name: name, id: id, image: UIImage()) { (error) in
+            if error != nil {
+                presenter?.presentError(.unexpectedError)
+            } else {
+                
+            }
         }
-    }
-    
-    private func searchCharacters(_ characters: [CharacterModel], with text: String) -> [CharacterModel] {
-        let options: String.CompareOptions = [.caseInsensitive, .diacriticInsensitive]
-        let searchedCharacters = characters.filter { (character) -> Bool in
-            return character.name?.range(of: text, options: options) != nil
-        }
-        return searchedCharacters
     }
 }

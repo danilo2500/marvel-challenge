@@ -10,7 +10,7 @@
 //  see http://clean-swift.com
 //
 
-import Foundation
+import UIKit
 
 protocol CharactersWorkerManager {
     func getCharacters(completion: @escaping (Result<CharacterDataWrapperModel, Error>) -> Void)
@@ -22,9 +22,21 @@ class CharactersWorker {
     
     init(manager: CharactersWorkerManager) {
         self.manager = manager
+        
     }
     
     func requestCharacters(completion: @escaping (Result<CharacterDataWrapperModel, Error>) -> Void ) {
         manager.getCharacters(completion: completion)
     }
+    
+    func saveCharacterOnFavorite(name: String, id: Int, image: UIImage, completion: (Error?) -> Void) {
+        let object = CharacterEntity()
+        object.name = name
+        object.id = Int32(id)
+        object.image = image.pngData()
+        let coreData = CoreDataManager()
+        
+        coreData.save(object: object, completion: completion)
+    }
+    
 }
