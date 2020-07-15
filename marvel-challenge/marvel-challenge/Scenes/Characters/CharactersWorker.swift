@@ -25,18 +25,21 @@ class CharactersWorker {
         
     }
     
-    func requestCharacters(completion: @escaping (Result<CharacterDataWrapperModel, Error>) -> Void ) {
+    func getCharacters(completion: @escaping (Result<CharacterDataWrapperModel, Error>) -> Void ) {
         manager.getCharacters(completion: completion)
     }
     
     func saveCharacterOnFavorite(name: String, id: Int, image: UIImage, completion: (Error?) -> Void) {
-        let object = CharacterEntity()
+        let object = FavoriteCharacterEntity()
         object.name = name
         object.id = Int32(id)
         object.image = image.pngData()
-        let coreData = CoreDataManager()
         
-        coreData.save(object: object, completion: completion)
+        CoreDataManager().save(object: object, completion: completion)
+    }
+    
+    func getFavoriteCharacters(completion: (Result<[FavoriteCharacterEntity], Error>) -> Void) {
+        CoreDataManager().getAll(completion: completion)
     }
     
 }

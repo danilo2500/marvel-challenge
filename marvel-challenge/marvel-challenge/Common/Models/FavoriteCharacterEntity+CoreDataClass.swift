@@ -1,17 +1,16 @@
 //
-//  CharacterEntity+CoreDataClass.swift
+//  FavoriteCharacterEntity+CoreDataClass.swift
 //  marvel-challenge
 //
-//  Created by Danilo Henrique on 13/07/20.
+//  Created by Danilo Henrique on 14/07/20.
 //  Copyright © 2020 danilo. All rights reserved.
 //
 //
-
 import UIKit
 import CoreData
 
-@objc(CharacterEntity)
-public class CharacterEntity: NSManagedObject {
+@objc(FavoriteCharacterEntity)
+public class FavoriteCharacterEntity: NSManagedObject {
     convenience init() {
         let appDelegate = UIApplication.shared.appDelegate
         let managedContext = appDelegate.persistentContainer.viewContext

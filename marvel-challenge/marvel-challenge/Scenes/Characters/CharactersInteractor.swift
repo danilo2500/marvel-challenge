@@ -14,35 +14,41 @@ import UIKit
 
 protocol CharactersBusinessLogic {
     func requestCharacters()
+    func getUpdatedFavorites()
     func searchCharacters(request: Characters.SearchCharacters.Request)
     func saveCharacterInFavorite(request: Characters.SaveInFavorite.Request)
 }
 
 protocol CharactersDataStore {
-    
+    var charactersBeingDisplayed: [CharacterModel] { get }
 }
 
-class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
+class CharactersInteractor: CharactersDataStore {
     
     var presenter: CharactersPresentationLogic?
     var worker = CharactersWorker(manager: CharactersNetworkManager())
     
-    // MARK: Private Variables
+    // MARK: Data Store
     
-    private var isSearching: Bool { !searchedCharacters.isEmpty }
-    private var characterDataWrapper: CharacterDataWrapperModel?
-    private var allCharacters: [CharacterModel] = []
-    private var searchedCharacters: [CharacterModel] = []
-    
-    // MARK: Private Functions
-    
-    private func getCharacterSelected(at indexPath: IndexPath) -> CharacterModel {
+    var charactersBeingDisplayed: [CharacterModel] {
         if isSearching {
-            return searchedCharacters[indexPath.row]
+            return searchedCharacters
         } else {
-            return allCharacters[indexPath.row]
+            return allCharacters
         }
     }
+    
+    // MARK: Variables
+    
+    var favorites: [FavoriteCharacterEntity] = []
+    var allCharacters: [CharacterModel] = []
+    var searchedCharacters: [CharacterModel] = []
+    
+    // MARK: Computed Propierties
+    
+    var isSearching: Bool { !searchedCharacters.isEmpty }
+    
+    // MARK: Private Functions
     
     private func searchCharacters(_ characters: [CharacterModel], with text: String) -> [CharacterModel] {
         let options: String.CompareOptions = [.caseInsensitive, .diacriticInsensitive]
@@ -52,10 +58,36 @@ class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
         return searchedCharacters
     }
     
-    // MARK: Business Logic
+    private func successRequestCharacters(characterDataWrapper: CharacterDataWrapperModel) {
+        guard let results = characterDataWrapper.data?.results, !results.isEmpty else {
+            presenter?.presentError(.emptyList)
+            return
+        }
+        allCharacters = results
+        getFavorites()
+        let response = Characters.GetCharacters.Response(results: results, favorites: favorites)
+        self.presenter?.presentCharacters(response: response)
+    }
     
+    private func getFavorites() {
+        worker.getFavoriteCharacters { [weak self] (result) in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let favorites):
+                self.favorites = favorites
+            case .failure:
+                self.presenter?.presentError(.databaseError)
+            }
+        }
+    }
+}
+
+// MARK: Business Logic
+
+extension CharactersInteractor : CharactersBusinessLogic {
     func requestCharacters() {
-        worker.requestCharacters(completion: { [weak self] (result) in
+        worker.getCharacters(completion: { [weak self] (result) in
             guard let self = self else { return }
             
             switch result {
@@ -67,38 +99,30 @@ class CharactersInteractor: CharactersBusinessLogic, CharactersDataStore {
         })
     }
     
-    private func successRequestCharacters(characterDataWrapper: CharacterDataWrapperModel) {
-        self.characterDataWrapper = characterDataWrapper
-        guard let results = characterDataWrapper.data?.results, !results.isEmpty else {
-            presenter?.presentError(.emptyList)
-            return
-        }
-        allCharacters = results
-        let response = Characters.GetCharacters.Response(results: results)
-        self.presenter?.presentCharacters(response: response)
-    }
-    
     func searchCharacters(request: Characters.SearchCharacters.Request) {
         if request.searchText.isEmpty {
             searchedCharacters = []
-            let response = Characters.GetCharacters.Response(results: allCharacters)
-            presenter?.presentCharacters(response: response)
         } else {
             searchedCharacters = searchCharacters(allCharacters, with: request.searchText)
-            let response = Characters.GetCharacters.Response(results: searchedCharacters)
-            presenter?.presentCharacters(response: response)
         }
+        
+        let response = Characters.GetCharacters.Response(results: charactersBeingDisplayed, favorites: favorites)
+        presenter?.presentCharacters(response: response)
+    }
+    
+    func getUpdatedFavorites() {
+        getFavorites()
+        let response = Characters.GetCharacters.Response(results: charactersBeingDisplayed, favorites: favorites)
+        presenter?.presentCharacters(response: response)
     }
     
     func saveCharacterInFavorite(request: Characters.SaveInFavorite.Request) {
-        let charactedSelected = getCharacterSelected(at: request.indexPath)
+        let charactedSelected = charactersBeingDisplayed[request.indexPath.row]
         guard let name = charactedSelected.name, let id = charactedSelected.id else { return }
         
         worker.saveCharacterOnFavorite(name: name, id: id, image: UIImage()) { (error) in
             if error != nil {
-                presenter?.presentError(.unexpectedError)
-            } else {
-                
+                presenter?.presentError(.databaseError)
             }
         }
     }

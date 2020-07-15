@@ -81,7 +81,7 @@ extension CharactersViewController: CharactersDisplayLogic {
     }
     
     func displaySaveCharacterInFavorite(viewModel: Characters.SaveInFavorite.ViewModel) {
-        
+        interactor?.requestCharacters()
     }
     
     func displayError(_ error: Characters.Error) {
@@ -101,18 +101,26 @@ extension CharactersViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
         let displayedCharacter = viewModel?.displayedCharacters[indexPath.row]
         cell.textLabel?.text = displayedCharacter?.name
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
     
-    //MARK: Swipe Action
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let displayedCharacter = viewModel?.displayedCharacters[indexPath.row]
+        
         let action = FavoriteContextualAction { (action, sourceView, completion) in
             self.saveCharacterOnFavorite(at: indexPath)
+            self.interactor?.getUpdatedFavorites()
             completion(true)
         }
         action.isFavorite = displayedCharacter?.isFavorited ?? false
+        
         let swipeActionsConfiguration = UISwipeActionsConfiguration(actions: [action])
         return swipeActionsConfiguration
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        router?.routeToDetail()
     }
 }
 

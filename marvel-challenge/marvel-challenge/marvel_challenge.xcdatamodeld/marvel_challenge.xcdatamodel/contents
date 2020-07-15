@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G103" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CharacterEntity" representedClassName="CharacterEntity" syncable="YES">
+    <entity name="FavoriteCharacterEntity" representedClassName="FavoriteCharacterEntity" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="CharacterEntity" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="FavoriteCharacterEntity" positionX="-63" positionY="-18" width="128" height="88"/>
     </elements>
 </model>

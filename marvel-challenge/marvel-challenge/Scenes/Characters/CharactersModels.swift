@@ -19,6 +19,7 @@ enum Characters {
     enum GetCharacters {
         struct Response {
             let results: [CharacterModel]
+            let favorites: [FavoriteCharacterEntity]
         }
         struct ViewModel {
             var displayedCharacters: [DisplayedCharacter]
@@ -37,8 +38,6 @@ enum Characters {
         }
     }
     
-    // MARK: Use cases
-    
     enum SaveInFavorite {
         struct Request {
             let indexPath: IndexPath
@@ -53,11 +52,23 @@ enum Characters {
     
     struct DisplayedCharacter {
         let name: String
-        var isFavorited: Bool
+        let isFavorited: Bool
     }
     
     enum Error {
         case emptyList
         case unexpectedError
+        case databaseError
+        
+        var description: String {
+            switch self {
+            case .emptyList:
+                return "Não encontramos nenhum héroi"
+            case .unexpectedError:
+                return "Um erro inesperado aconteceu"
+            case .databaseError:
+                return "Um erro inesperado aconteceu no banco de dados"
+            }
+        }
     }
 }

@@ -23,11 +23,9 @@ class RESTService<T: RESTRequest>{
                     let object = try JSONDecoder().decode(U.self, from: data)
                     completion(.success(object))
                 } catch {
-                    print(error)
                     completion(.failure(error))
                 }
             } else {
-                print(error.debugDescription)
                 completion(.failure(error ?? NSError()))
             }
         }.resume()

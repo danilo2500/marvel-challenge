@@ -25,26 +25,31 @@ class CharactersPresenter: CharactersPresentationLogic {
     // MARK: Presentation Logic
     
     func presentCharacters(response: Characters.GetCharacters.Response) {
-        let displayedCharacters = response.results.map({createDisplayedCharacter(with: $0)})
+        let displayedCharacters = response.results.map { (character) -> Characters.DisplayedCharacter in
+            let name = character.name ?? "-"
+            let isFavorited = containsID(ofCharacter: character, on: response.favorites)
+            let displayedCharacter = Characters.DisplayedCharacter(name: name, isFavorited: isFavorited)
+            return displayedCharacter
+        }
         
         let viewModel = Characters.GetCharacters.ViewModel(displayedCharacters: displayedCharacters)
         viewController?.displayCharacters(viewModel: viewModel)
     }
     
+    private func containsID(ofCharacter character: CharacterModel, on favorites: [FavoriteCharacterEntity]) -> Bool {
+        guard let characterId = character.id else { return false }
+        
+        let isFavorited = favorites.contains { (favorite) -> Bool in
+            return Int(favorite.id) == characterId
+        }
+        return isFavorited
+    }
+    
     func presentSaveCharacterInFavorite(response: Characters.SaveInFavorite.Response) {
-        let viewModel = Characters.SaveInFavorite.ViewModel()
-        vi
+        
     }
     
     func presentError(_ error: Characters.Error) {
         viewController?.displayError(error)
-    }
-    
-    // MARK: Private Functions
-    
-    private func createDisplayedCharacter(with character: CharacterModel) -> Characters.DisplayedCharacter {
-        let name = character.name ?? "-"
-        let displayedCharacter = Characters.DisplayedCharacter(name: name, isFavorited: false)
-        return displayedCharacter
     }
 }

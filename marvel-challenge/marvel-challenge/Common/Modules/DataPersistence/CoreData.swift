@@ -24,10 +24,23 @@ class CoreDataManager {
         }
     }
     
-    func get<T: NSManagedObject>(completion: (Result<[T], Error>) -> Void) {
+    func getAll<T: NSManagedObject>(completion: (Result<[T], Error>) -> Void) {
         let entityName = String(describing: T.self)
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        do {
+            let results = try managedContext.fetch(fetchRequest) as! [T]
+            completion(.success(results))
+        } catch {
+            completion(.failure(error))
+        }
+    }
+    
+    func get<T: NSManagedObject>(withId id: Int, completion: (Result<[T], Error>) -> Void) {
+        let entityName = String(describing: T.self)
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        fetchRequest.predicate = NSPredicate(format: "id = %d", id)
         do {
             let results = try managedContext.fetch(fetchRequest) as! [T]
             completion(.success(results))
