@@ -38,6 +38,21 @@ class CharactersWorker {
         CoreDataManager().save(object: object, completion: completion)
     }
     
+    func removeCharacterFromFavorite(id: Int, completion: (Error?) -> Void) {
+        let entityName = String(describing: FavoriteCharacterEntity.self)
+        CoreDataManager().get(entityName: entityName, withId: id) { (result) in
+            switch result {
+            case .success(let favorites):
+                for favorite in favorites {
+                    CoreDataManager().delete(object: favorite, completion: nil)
+                }
+                completion(nil)
+            case .failure:
+                completion(NSError())
+            }
+        }
+    }
+    
     func getFavoriteCharacters(completion: (Result<[FavoriteCharacterEntity], Error>) -> Void) {
         CoreDataManager().getAll(completion: completion)
     }

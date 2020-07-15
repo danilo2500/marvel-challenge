@@ -42,10 +42,10 @@ enum Characters {
         struct Request {
             let indexPath: IndexPath
         }
-        struct Response {
-            let indexPath: IndexPath
-        }
-        struct ViewModel {
+    }
+    
+    enum RemoveFromFavorite {
+        struct Request {
             let indexPath: IndexPath
         }
     }

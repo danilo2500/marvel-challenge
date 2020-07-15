@@ -60,11 +60,13 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController: DetailDisplayLogic {
     func displayCharacter(viewModel: Detail.Character.ViewModel) {
+        title = viewModel.name
         nameLabel.text = viewModel.name
         descriptionLabel.text = viewModel.description
     }
     
     func displayImage(viewModel: Detail.GetImage.ViewModel) {
+        LoadingView.dismiss()
         imageView.image = viewModel.image
     }
     

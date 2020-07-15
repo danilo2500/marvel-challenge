@@ -17,6 +17,7 @@ protocol CharactersBusinessLogic {
     func getUpdatedFavorites()
     func searchCharacters(request: Characters.SearchCharacters.Request)
     func saveCharacterInFavorite(request: Characters.SaveInFavorite.Request)
+    func removeCharacterFromFavorite(request: Characters.RemoveFromFavorite.Request)
 }
 
 protocol CharactersDataStore {
@@ -121,6 +122,17 @@ extension CharactersInteractor : CharactersBusinessLogic {
         guard let name = charactedSelected.name, let id = charactedSelected.id else { return }
         
         worker.saveCharacterOnFavorite(name: name, id: id, image: UIImage()) { (error) in
+            if error != nil {
+                presenter?.presentError(.databaseError)
+            }
+        }
+    }
+    
+    func removeCharacterFromFavorite(request: Characters.RemoveFromFavorite.Request) {
+        let charactedSelected = charactersBeingDisplayed[request.indexPath.row]
+        guard let id = charactedSelected.id else { return }
+        
+        worker.removeCharacterFromFavorite(id: id) { (error) in
             if error != nil {
                 presenter?.presentError(.databaseError)
             }

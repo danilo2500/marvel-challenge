@@ -14,7 +14,6 @@ import UIKit
 
 protocol CharactersPresentationLogic {
     func presentCharacters(response: Characters.GetCharacters.Response)
-    func presentSaveCharacterInFavorite(response: Characters.SaveInFavorite.Response)
     func presentError(_ error: Characters.Error)
 }
 
@@ -43,10 +42,6 @@ class CharactersPresenter: CharactersPresentationLogic {
             return Int(favorite.id) == characterId
         }
         return isFavorited
-    }
-    
-    func presentSaveCharacterInFavorite(response: Characters.SaveInFavorite.Response) {
-        
     }
     
     func presentError(_ error: Characters.Error) {

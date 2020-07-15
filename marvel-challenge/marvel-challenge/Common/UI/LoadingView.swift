@@ -33,7 +33,6 @@ class LoadingView: UIView {
     
     static func show() {
         shared.addSelfOnWindow()
-        shared.addActivityView()
     }
     
     static func dismiss() {
@@ -48,11 +47,13 @@ class LoadingView: UIView {
     
     func setup() {
         backgroundColor = UIColor.black.withAlphaComponent(0)
+        addActivityView()
     }
     
     private func addSelfOnWindow() {
         let window = UIApplication.shared.currentWindow
         window?.addSubview(self)
+        alpha = 1
         UIView.animate(withDuration: 0.5) {
             self.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         }

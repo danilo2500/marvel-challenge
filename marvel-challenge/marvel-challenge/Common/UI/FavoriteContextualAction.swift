@@ -28,12 +28,6 @@ class FavoriteContextualAction: UIContextualAction {
     
     convenience init(handler: @escaping UIContextualAction.Handler) {
         self.init(style: .normal, title: nil, handler: handler)
-        setup()
-    }
-    
-    //MARK: Private Functions
-    
-    private func setup() {
         isFavorite = false
     }
 }

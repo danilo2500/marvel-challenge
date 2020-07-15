@@ -17,7 +17,8 @@ import CoreData
 class DetailWorker {
 
     func getFavoriteCharacter(withId id: Int, completion: (Result<[FavoriteCharacterEntity], Error>) -> Void) {
-        CoreDataManager().get(withId: id, completion: completion)
+        let entityName = String(describing: FavoriteCharacterEntity.self)
+        CoreDataManager().get(entityName: entityName, withId: id, completion: completion)
     }
     
     func requestImage(fromURL url: URL, completion: @escaping (Result<UIImage, Error>) -> Void) {

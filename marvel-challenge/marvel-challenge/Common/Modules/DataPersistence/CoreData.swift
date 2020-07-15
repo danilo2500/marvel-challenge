@@ -36,9 +36,7 @@ class CoreDataManager {
         }
     }
     
-    func get<T: NSManagedObject>(withId id: Int, completion: (Result<[T], Error>) -> Void) {
-        let entityName = String(describing: T.self)
-        
+    func get<T: NSManagedObject>(entityName: String, withId id: Int, completion: (Result<[T], Error>) -> Void) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         fetchRequest.predicate = NSPredicate(format: "id = %d", id)
         do {
@@ -49,13 +47,13 @@ class CoreDataManager {
         }
     }
     
-    func delete(object: NSManagedObject, completion: (Error?) -> Void) {
+    func delete(object: NSManagedObject, completion: ((Error?) -> Void)?) {
         managedContext.delete(object)
         do {
             try managedContext.save()
-            completion(nil)
+            completion?(nil)
         } catch {
-            completion(error)
+            completion?(error)
         }
     }
 }

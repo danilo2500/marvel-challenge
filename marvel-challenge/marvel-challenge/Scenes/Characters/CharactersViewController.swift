@@ -10,7 +10,6 @@ import NVActivityIndicatorView
 
 protocol CharactersDisplayLogic: AnyObject {
     func displayCharacters(viewModel: Characters.GetCharacters.ViewModel)
-    func displaySaveCharacterInFavorite(viewModel: Characters.SaveInFavorite.ViewModel)
     func displayError(_ error: Characters.Error)
 }
 
@@ -63,10 +62,22 @@ class CharactersViewController: UITableViewController {
         interactor?.saveCharacterInFavorite(request: request)
     }
     
+    private func removeCharacterFromFavorite(at indexPath: IndexPath) {
+        let request = Characters.RemoveFromFavorite.Request(indexPath: indexPath)
+        interactor?.removeCharacterFromFavorite(request: request)
+    }
+    
     private func searchCharacters() {
         let searchText = searchController.searchBar.text ?? ""
         let request = Characters.SearchCharacters.Request(searchText: searchText)
         self.interactor?.searchCharacters(request: request)
+    }
+    
+    private func showAlert(message: String) {
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(action)
+        present(alertController, animated: true, completion: nil)
     }
 }
 
@@ -78,10 +89,6 @@ extension CharactersViewController: CharactersDisplayLogic {
         LoadingView.dismiss()
         self.viewModel = viewModel
         tableView.reloadData()
-    }
-    
-    func displaySaveCharacterInFavorite(viewModel: Characters.SaveInFavorite.ViewModel) {
-        interactor?.requestCharacters()
     }
     
     func displayError(_ error: Characters.Error) {
@@ -108,10 +115,15 @@ extension CharactersViewController {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let displayedCharacter = viewModel?.displayedCharacters[indexPath.row]
         
-        let action = FavoriteContextualAction { (action, sourceView, completion) in
-            self.saveCharacterOnFavorite(at: indexPath)
+        let action = FavoriteContextualAction { [weak self] (action, sourceView, completion) in
+            guard let self = self else { return }
+            let action = action as! FavoriteContextualAction
+            if action.isFavorite {
+                self.removeCharacterFromFavorite(at: indexPath)
+            } else {
+                self.saveCharacterOnFavorite(at: indexPath)
+            }
             self.interactor?.getUpdatedFavorites()
-            completion(true)
         }
         action.isFavorite = displayedCharacter?.isFavorited ?? false
         
