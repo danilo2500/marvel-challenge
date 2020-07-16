@@ -33,12 +33,14 @@ class AlertView: UIView {
     lazy private var button: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(didTouchButton), for: .touchUpInside)
+        button.setTitleColor(.red, for: .normal)
         return button
     }()
     
     lazy private var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [imageView, messageLabel, button])
         stackView.axis = .vertical
+        stackView.alignment = .center
         stackView.spacing = 10
         return stackView
     }()
@@ -78,13 +80,18 @@ class AlertView: UIView {
     //MARK: Private Functions
     
     private func setup() {
+        backgroundColor = .white
         addSubview(stackView)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        stackView.topAnchor.constraint(lessThanOrEqualTo: topAnchor, constant: 20).isActive = true
-        stackView.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: 20).isActive = true
+        stackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        stackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
     }
     
     @objc private func didTouchButton() {

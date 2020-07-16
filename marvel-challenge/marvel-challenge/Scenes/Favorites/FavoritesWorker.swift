@@ -16,14 +16,15 @@ import CoreData
 class FavoritesWorker {
     
     let coreData = CoreDataManager()
-
+    
     func getFavoriteCharacters(completion: (Result<[FavoriteCharacterEntity], Error>) -> Void) {
         let entityName = String(describing: FavoriteCharacterEntity.self)
         coreData.getAll(entityName: entityName, completion: completion)
     }
     
     func removeCharacterFromFavorite(id: Int, completion: (Error?) -> Void) {
-        getAllFavorites { (result) in
+        let entityName = String(describing: FavoriteCharacterEntity.self)
+        coreData.get(entityName: entityName, withId: id) { (result) in
             switch result {
             case .success(let favorites):
                 removeAll(favorites: favorites)
@@ -39,10 +40,9 @@ class FavoritesWorker {
         coreData.getAll(entityName: entityName, completion: completion)
     }
     
-    private func removeAll(favorites: [FavoriteCharacterEntity]) {
+    private func removeAll(favorites: [NSManagedObject]) {
         for favorite in favorites {
             coreData.delete(object: favorite, completion: nil)
         }
-        
     }
 }

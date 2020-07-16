@@ -30,13 +30,6 @@ enum Characters {
         struct Request {
             let searchText: String
         }
-        struct Response {
-            let results: [CharacterModel]
-            let favorites: [FavoriteCharacterEntity]
-        }
-        struct ViewModel {
-            let displayedCharacters: [DisplayedCharacter]
-        }
     }
     
     enum SaveInFavorite {

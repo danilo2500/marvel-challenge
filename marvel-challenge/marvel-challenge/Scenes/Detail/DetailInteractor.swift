@@ -70,8 +70,8 @@ class DetailInteractor: DetailBusinessLogic, DetailDataStore {
             case .success(let image):
                 let response = Detail.GetImage.Response(image: image)
                 self.presenter?.presentImage(response: response)
-            case .failure:
-                self.presenter?.presentError(.unexpectedError)
+            case .failure(let error):
+                self.handleRequestImageError(error: error)
             }
         }
     }
@@ -84,7 +84,9 @@ class DetailInteractor: DetailBusinessLogic, DetailDataStore {
         
         worker.saveCharacterOnFavorite(name: name, id: id) { [weak self] (error) in
             guard let self = self else { return }
-            if error != nil {
+            if error == nil {
+                self.presenter?.presentDatabaseSuccess()
+            } else {
                 self.presenter?.presentError(.database)
             }
         }
@@ -96,10 +98,25 @@ class DetailInteractor: DetailBusinessLogic, DetailDataStore {
             return
         }
         
-        worker.removeCharacterFromFavorite(id: id) { (error) in
-            if error != nil {
-                presenter?.presentError(.database)
+        worker.removeCharacterFromFavorite(id: id) { [weak self] (error) in
+            guard let self = self else { return }
+            if error == nil {
+                self.presenter?.presentDatabaseSuccess()
+            } else {
+                self.presenter?.presentError(.database)
             }
         }
     }
+    
+    // MARK: Private Functions
+    
+    func handleRequestImageError(error: Error) {
+        let nsError = error as NSError
+        if nsError.code  == NSURLErrorNotConnectedToInternet {
+            presenter?.presentError(.notConnectedToInternet)
+        } else {
+            presenter?.presentError(.unexpectedError)
+        }
+    }
+    
 }

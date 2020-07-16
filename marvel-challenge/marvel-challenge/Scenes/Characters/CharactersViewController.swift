@@ -25,8 +25,12 @@ class CharactersViewController: UITableViewController {
     // MARK: Variables
     
     var dispatchWorkItem = DispatchWorkItem {}
-    var viewModel: Characters.GetCharacters.ViewModel?
+    var displayedCharacters: [Characters.DisplayedCharacter] = []
     var error: Characters.Error?
+    
+    // MARK: Variables
+    
+    var isSearching: Bool { !searchController.searchBar.text!.isEmpty }
     
     // MARK: UI Elements
     
@@ -34,6 +38,7 @@ class CharactersViewController: UITableViewController {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
+        searchController.searchBar.isUserInteractionEnabled = false
         return searchController
     }()
     
@@ -64,7 +69,7 @@ class CharactersViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if viewModel != nil {
+        if !displayedCharacters.isEmpty {
             interactor?.getUpdatedFavorites()
         }
     }
@@ -78,6 +83,7 @@ class CharactersViewController: UITableViewController {
     private func setupUI() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.keyboardDismissMode = .interactive
+        tableView.tableFooterView = UIView()
         navigationItem.searchController = searchController
     }
     
@@ -97,12 +103,28 @@ class CharactersViewController: UITableViewController {
     }
     
     private func searchCharacters() {
+        tableView.backgroundView = nil
         let searchText = searchController.searchBar.text ?? ""
+        interactor?.updateIsSearching(isSearching: isSearching)
         let request = Characters.SearchCharacters.Request(searchText: searchText)
         self.interactor?.searchCharacters(request: request)
     }
+}
+
+// MARK: Display Logic
+
+extension CharactersViewController: CharactersDisplayLogic {
     
-    private func showAlertView(forError error: Characters.Error) {
+    func displayCharacters(viewModel: Characters.GetCharacters.ViewModel) {
+        searchController.searchBar.isUserInteractionEnabled = true
+        LoadingView.dismiss()
+        displayedCharacters = viewModel.displayedCharacters
+        tableView.reloadData()
+    }
+    
+    func displayError(_ error: Characters.Error) {
+        LoadingView.dismiss()
+        self.error = error
         let alertView = AlertView()
         alertView.message = error.message
         alertView.delegate = self
@@ -116,24 +138,7 @@ class CharactersViewController: UITableViewController {
         case .notConnectedToInternet:
             alertView.buttonTitle = "Tentar Novamente"
         }
-        view.addSubview(alertView)
-    }
-}
-
-// MARK: Display Logic
-
-extension CharactersViewController: CharactersDisplayLogic {
-    
-    func displayCharacters(viewModel: Characters.GetCharacters.ViewModel) {
-        LoadingView.dismiss()
-        self.viewModel = viewModel
-        tableView.reloadData()
-    }
-    
-    func displayError(_ error: Characters.Error) {
-        LoadingView.dismiss()
-        self.error = error
-        showAlertView(forError: error)
+        tableView.backgroundView = alertView
     }
 }
 
@@ -142,19 +147,19 @@ extension CharactersViewController: CharactersDisplayLogic {
 extension CharactersViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.displayedCharacters.count ?? 0
+        return displayedCharacters.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
-        let displayedCharacter = viewModel?.displayedCharacters[indexPath.row]
-        cell.textLabel?.text = displayedCharacter?.name
+        let displayedCharacter = displayedCharacters[indexPath.row]
+        cell.textLabel?.text = displayedCharacter.name
         cell.accessoryType = .disclosureIndicator
         return cell
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let displayedCharacter = viewModel?.displayedCharacters[indexPath.row]
+        let displayedCharacter = displayedCharacters[indexPath.row]
         
         let action = FavoriteContextualAction { [weak self] (action, sourceView, completion) in
             guard let self = self else { return }
@@ -169,7 +174,7 @@ extension CharactersViewController {
             
             self.interactor?.getUpdatedFavorites()
         }
-        action.isFavorite = displayedCharacter?.isFavorited ?? false
+        action.isFavorite = displayedCharacter.isFavorited
         
         return UISwipeActionsConfiguration(actions: [action])
     }
@@ -183,6 +188,7 @@ extension CharactersViewController {
 
 extension CharactersViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
+        interactor?.updateIsSearching(isSearching: isSearching)
         dispatchWorkItem.cancel()
         dispatchWorkItem = DispatchWorkItem(block: { [weak self] in
             guard let self = self else { return }

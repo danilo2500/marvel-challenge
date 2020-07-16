@@ -15,6 +15,7 @@ import UIKit
 protocol DetailPresentationLogic {
     func presentCharacter(response: Detail.Character.Response)
     func presentImage(response: Detail.GetImage.Response)
+    func presentDatabaseSuccess()
     func presentError(_ error: Detail.Error)
 }
 
@@ -35,6 +36,10 @@ class DetailPresenter: DetailPresentationLogic {
     func presentImage(response: Detail.GetImage.Response) {
         let viewModel = Detail.GetImage.ViewModel(image: response.image)
         viewController?.displayImage(viewModel: viewModel)
+    }
+    
+    func presentDatabaseSuccess() {
+        viewController?.displayDatabaseSuccess()
     }
     
     func presentError(_ error: Detail.Error) {

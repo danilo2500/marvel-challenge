@@ -16,6 +16,7 @@ import NVActivityIndicatorView
 protocol DetailDisplayLogic: AnyObject {
     func displayCharacter(viewModel: Detail.Character.ViewModel)
     func displayImage(viewModel: Detail.GetImage.ViewModel)
+    func displayDatabaseSuccess()
     func displayError(_ error: Detail.Error)
 }
 
@@ -32,7 +33,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var starButton: UIButton!
     
     // MARK: Variables
-    
+    var error: Detail.Error?
     var viewModel: Detail.Character.ViewModel?
     
     // MARK: Computed Propierties
@@ -64,28 +65,48 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor?.requestCharacter()
         requestImage()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        interactor?.requestCharacter()
+    }
+    
+    // MARK: Private Functions
+    
     private func requestImage() {
         LoadingView.show()
         interactor?.requestImage()
     }
     
-    @IBAction func didTouchStarButton(_ sender: Any) {
+    private func saveOrRemoveCharacterFromFavorite() {
         if starButtonIsFavorited {
             interactor?.removeCharacterFromFavorite()
         } else {
             interactor?.saveCharacterInFavorite()
         }
-        starButtonIsFavorited.toggle()
+    }
+    
+    func showAlertView(forError error: Detail.Error) {
+        let alertView = AlertView(frame: view.frame)
+        alertView.message = error.message
+        alertView.buttonTitle = "Tentar novamente"
+        alertView.delegate = self
+        view.addSubview(alertView)
+    }
+    
+    // MARK: IB Actions
+    
+    @IBAction func didTouchStarButton(_ sender: Any) {
+        saveOrRemoveCharacterFromFavorite()
     }
 }
 
 // MARK: Display Logic
 
 extension DetailViewController: DetailDisplayLogic {
+    
     func displayCharacter(viewModel: Detail.Character.ViewModel) {
         title = viewModel.name
         nameLabel.text = viewModel.name
@@ -98,7 +119,31 @@ extension DetailViewController: DetailDisplayLogic {
         imageView.image = viewModel.image
     }
     
+    func displayDatabaseSuccess() {
+        starButtonIsFavorited.toggle()
+    }
+    
     func displayError(_ error: Detail.Error) {
-        showAlert(message: error.message)
+        LoadingView.dismiss()
+        self.error = error
+        showAlertView(forError: error)
+    }
+}
+
+// MARK: AlertView Delegate
+
+extension DetailViewController: AlertViewDelegate {
+    func alertView(_ alertView: AlertView, didTouchButton button: UIButton) {
+        guard let error = error else { return }
+        switch error {
+        case .unexpectedError:
+            navigationController?.popViewController(animated: true)
+        case .database:
+            saveOrRemoveCharacterFromFavorite()
+        case .notConnectedToInternet:
+            requestImage()
+        }
+        self.error = nil
+        alertView.removeFromSuperview()
     }
 }

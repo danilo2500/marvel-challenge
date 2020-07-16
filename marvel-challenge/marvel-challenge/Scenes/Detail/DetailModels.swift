@@ -40,6 +40,7 @@ enum Detail {
     enum Error {
         case unexpectedError
         case database
+        case notConnectedToInternet
         
         var message: String {
             switch self {
@@ -47,6 +48,8 @@ enum Detail {
                 return ErrorConstants.unexpectedError
             case .database:
                 return ErrorConstants.database
+            case .notConnectedToInternet:
+                return ErrorConstants.notConnectedToInternet
             }
         }
     }

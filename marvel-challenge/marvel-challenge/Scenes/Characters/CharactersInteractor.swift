@@ -15,6 +15,7 @@ import UIKit
 protocol CharactersBusinessLogic {
     func requestCharacters()
     func getUpdatedFavorites()
+    func updateIsSearching(isSearching: Bool)
     func searchCharacters(request: Characters.SearchCharacters.Request)
     func saveCharacterInFavorite(request: Characters.SaveInFavorite.Request)
     func removeCharacterFromFavorite(request: Characters.RemoveFromFavorite.Request)
@@ -35,6 +36,7 @@ class CharactersInteractor: CharactersDataStore {
     var favorites: [FavoriteCharacterEntity] = []
     var allCharacters: [CharacterModel] = []
     var searchedCharacters: [CharacterModel] = []
+    var isSearching: Bool = false
     
     // MARK: Data Store
     
@@ -45,10 +47,6 @@ class CharactersInteractor: CharactersDataStore {
             return allCharacters
         }
     }
-    
-    // MARK: Computed Propierties
-    
-    var isSearching: Bool { !searchedCharacters.isEmpty }
     
     // MARK: Private Functions
     
@@ -111,18 +109,12 @@ extension CharactersInteractor : CharactersBusinessLogic {
     }
     
     func searchCharacters(request: Characters.SearchCharacters.Request) {
-        if request.searchText.isEmpty {
-            searchedCharacters = []
-        } else {
-            searchedCharacters = searchCharacters(allCharacters, with: request.searchText)
-        }
-        
+        searchedCharacters = searchCharacters(allCharacters, with: request.searchText)
         if searchedCharacters.isEmpty {
             presenter?.presentError(.emptyList)
-        } else {
-            let response = Characters.searh.Response(results: charactersBeingDisplayed, favorites: favorites)
-            presenter?.presentCharacters(response: response)
         }
+        let response = Characters.GetCharacters.Response(results: charactersBeingDisplayed, favorites: favorites)
+        presenter?.presentCharacters(response: response)
     }
     
     func getUpdatedFavorites() {
@@ -151,5 +143,9 @@ extension CharactersInteractor : CharactersBusinessLogic {
                 presenter?.presentError(.database)
             }
         }
+    }
+    
+    func updateIsSearching(isSearching: Bool) {
+        self.isSearching = isSearching
     }
 }
