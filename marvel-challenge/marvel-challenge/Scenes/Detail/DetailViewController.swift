@@ -16,7 +16,7 @@ import NVActivityIndicatorView
 protocol DetailDisplayLogic: AnyObject {
     func displayCharacter(viewModel: Detail.Character.ViewModel)
     func displayImage(viewModel: Detail.GetImage.ViewModel)
-    func displayError()
+    func displayError(_ error: Detail.Error)
 }
 
 class DetailViewController: UIViewController {
@@ -70,7 +70,7 @@ extension DetailViewController: DetailDisplayLogic {
         imageView.image = viewModel.image
     }
     
-    func displayError() {
-        
+    func displayError(_ error: Detail.Error) {
+        showAlert(message: error.message)
     }
 }

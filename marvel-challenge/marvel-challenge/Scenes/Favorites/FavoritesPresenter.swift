@@ -10,20 +10,26 @@
 //  see http://clean-swift.com
 //
 
-import UIKit
+import Foundation
 
 protocol FavoritesPresentationLogic {
-    func presentSomething(response: Favorites.Something.Response)
+    func presentFavorites(response: Favorites.GetFavorites.Response)
+    func presentError()
 }
 
 class FavoritesPresenter: FavoritesPresentationLogic {
     
     weak var viewController: FavoritesDisplayLogic?
     
-    // MARK: Do something
+    // MARK: Presentation Logic
     
-    func presentSomething(response: Favorites.Something.Response) {
-        let viewModel = Favorites.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func presentFavorites(response: Favorites.GetFavorites.Response) {
+        let names = response.favorites.map({$0.name ?? "-"})
+        let viewModel = Favorites.GetFavorites.ViewModel(names: names)
+        viewController?.displayFavorites(viewModel: viewModel)
+    }
+    
+    func presentError() {
+        viewController?.displayError(.database)
     }
 }

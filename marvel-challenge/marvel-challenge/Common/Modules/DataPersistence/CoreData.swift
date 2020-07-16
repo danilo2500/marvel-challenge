@@ -24,9 +24,7 @@ class CoreDataManager {
         }
     }
     
-    func getAll<T: NSManagedObject>(completion: (Result<[T], Error>) -> Void) {
-        let entityName = String(describing: T.self)
-        
+    func getAll<T: NSManagedObject>(entityName: String, completion: (Result<[T], Error>) -> Void) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         do {
             let results = try managedContext.fetch(fetchRequest) as! [T]
@@ -54,6 +52,20 @@ class CoreDataManager {
             completion?(nil)
         } catch {
             completion?(error)
+        }
+    }
+    
+    func deleteAllEntries(entityName: String, completion: ((Error?) -> Void)?) {
+        getAll(entityName: entityName) { (result) in
+            switch result {
+            case .success(let entities):
+                for entity in entities {
+                    delete(object: entity, completion: nil)
+                }
+                completion?(nil)
+            case .failure(let error):
+                completion?(error)
+            }
         }
     }
 }

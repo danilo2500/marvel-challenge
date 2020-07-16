@@ -13,7 +13,8 @@
 import UIKit
 
 protocol FavoritesBusinessLogic {
-    func doSomething(request: Favorites.Something.Request)
+    func requestFavorites()
+    func removeFavoriteFromDatabase(at indexPath: IndexPath)
 }
 
 protocol FavoritesDataStore {
@@ -25,14 +26,35 @@ class FavoritesInteractor: FavoritesBusinessLogic, FavoritesDataStore {
     var presenter: FavoritesPresentationLogic?
     var worker: FavoritesWorker? = FavoritesWorker()
     
+    // MARK: Variables
+    
+    var favorites: [FavoriteCharacterEntity] = []
     
     // MARK: Business Logic
     
-    func doSomething(request: Favorites.Something.Request) {
-        worker = FavoritesWorker()
-        worker?.doSomeWork()
-        
-        let response = Favorites.Something.Response()
-        presenter?.presentSomething(response: response)
+    func requestFavorites() {
+        worker?.getFavoriteCharacters { [weak self] (result) in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let favorites):
+                self.favorites = favorites
+                let response = Favorites.GetFavorites.Response(favorites: favorites)
+                self.presenter?.presentFavorites(response: response)
+            case .failure:
+                self.presenter?.presentError()
+            }
+        }
+    }
+    
+    func removeFavoriteFromDatabase(at indexPath: IndexPath) {
+        favorites.remove(at: indexPath.row)
+        let id = Int(favorites[indexPath.row].id)
+        worker?.removeCharacterFromFavorite(id: id, completion: { [weak self] (error) in
+            guard let self = self else { return }
+            if error != nil {
+                self.presenter?.presentError()
+            }
+        })
     }
 }

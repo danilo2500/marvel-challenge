@@ -37,7 +37,7 @@ class DetailInteractor: DetailBusinessLogic, DetailDataStore {
             let character = character,
             let id = character.id
         else {
-            presenter?.presentError()
+            presenter?.presentError(.unexpectedError)
             return
         }
         
@@ -47,7 +47,7 @@ class DetailInteractor: DetailBusinessLogic, DetailDataStore {
                 let response = Detail.Character.Response(character: character, favoriteCharacter: favoritesCharacter.first)
                 presenter?.presentCharacter(response: response)
             case .failure:
-                presenter?.presentError()
+                presenter?.presentError(.database)
             }
         }
     }
@@ -57,7 +57,7 @@ class DetailInteractor: DetailBusinessLogic, DetailDataStore {
             let extensionType = character?.thumbnail?.extension,
             let url = URL(string: path + "." + extensionType)
         else {
-            presenter?.presentError()
+            presenter?.presentError(.unexpectedError)
             return
         }
         
@@ -69,7 +69,34 @@ class DetailInteractor: DetailBusinessLogic, DetailDataStore {
                 let response = Detail.GetImage.Response(image: image)
                 self.presenter?.presentImage(response: response)
             case .failure:
-                self.presenter?.presentError()
+                self.presenter?.presentError(.unexpectedError)
+            }
+        }
+    }
+    
+    func saveCharacterInFavorite(request: Characters.SaveInFavorite.Request) {
+        guard let name = character?.name, let id = character?.id else {
+            self.presenter?.presentError(.unexpectedError)
+            return
+        }
+        
+        worker.saveCharacterOnFavorite(name: name, id: id) { [weak self] (error) in
+            guard let self = self else { return }
+            if error != nil {
+                self.presenter?.presentError(.database)
+            }
+        }
+    }
+    
+    func removeCharacterFromFavorite(request: Characters.RemoveFromFavorite.Request) {
+        guard let id = character?.id else {
+            presenter?.presentError(.unexpectedError)
+            return
+        }
+        
+        worker.removeCharacterFromFavorite(id: id) { (error) in
+            if error != nil {
+                presenter?.presentError(.database)
             }
         }
     }

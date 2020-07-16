@@ -36,4 +36,18 @@ enum Detail {
             let image: UIImage
         }
     }
+    
+    enum Error {
+        case unexpectedError
+        case database
+        
+        var message: String {
+            switch self {
+            case .unexpectedError:
+                return ErrorConstants.unexpectedError
+            case .database:
+                return ErrorConstants.database
+            }
+        }
+    }
 }

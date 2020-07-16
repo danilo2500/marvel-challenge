@@ -32,4 +32,27 @@ class DetailWorker {
             }
         }.resume()
     }
+    
+    func saveCharacterOnFavorite(name: String, id: Int, completion: (Error?) -> Void) {
+        let object = FavoriteCharacterEntity()
+        object.name = name
+        object.id = Int32(id)
+        
+        CoreDataManager().save(object: object, completion: completion)
+    }
+    
+    func removeCharacterFromFavorite(id: Int, completion: (Error?) -> Void) {
+        let entityName = String(describing: FavoriteCharacterEntity.self)
+        CoreDataManager().get(entityName: entityName, withId: id) { (result) in
+            switch result {
+            case .success(let favorites):
+                for favorite in favorites {
+                    CoreDataManager().delete(object: favorite, completion: nil)
+                }
+                completion(nil)
+            case .failure:
+                completion(NSError())
+            }
+        }
+    }
 }

@@ -29,6 +29,13 @@ class CharactersInteractor: CharactersDataStore {
     var presenter: CharactersPresentationLogic?
     var worker = CharactersWorker(manager: CharactersNetworkManager())
     
+    
+    // MARK: Variables
+    
+    var favorites: [FavoriteCharacterEntity] = []
+    var allCharacters: [CharacterModel] = []
+    var searchedCharacters: [CharacterModel] = []
+    
     // MARK: Data Store
     
     var charactersBeingDisplayed: [CharacterModel] {
@@ -38,12 +45,6 @@ class CharactersInteractor: CharactersDataStore {
             return allCharacters
         }
     }
-    
-    // MARK: Variables
-    
-    var favorites: [FavoriteCharacterEntity] = []
-    var allCharacters: [CharacterModel] = []
-    var searchedCharacters: [CharacterModel] = []
     
     // MARK: Computed Propierties
     
@@ -78,7 +79,7 @@ class CharactersInteractor: CharactersDataStore {
             case .success(let favorites):
                 self.favorites = favorites
             case .failure:
-                self.presenter?.presentError(.databaseError)
+                self.presenter?.presentError(.database)
             }
         }
     }
@@ -121,9 +122,9 @@ extension CharactersInteractor : CharactersBusinessLogic {
         let charactedSelected = charactersBeingDisplayed[request.indexPath.row]
         guard let name = charactedSelected.name, let id = charactedSelected.id else { return }
         
-        worker.saveCharacterOnFavorite(name: name, id: id, image: UIImage()) { (error) in
+        worker.saveCharacterOnFavorite(name: name, id: id) { (error) in
             if error != nil {
-                presenter?.presentError(.databaseError)
+                presenter?.presentError(.database)
             }
         }
     }
@@ -134,7 +135,7 @@ extension CharactersInteractor : CharactersBusinessLogic {
         
         worker.removeCharacterFromFavorite(id: id) { (error) in
             if error != nil {
-                presenter?.presentError(.databaseError)
+                presenter?.presentError(.database)
             }
         }
     }

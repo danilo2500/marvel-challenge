@@ -23,6 +23,7 @@ class CharactersViewController: UITableViewController {
     let cellReuseIdentifier = String(describing: UITableViewCell.self)
     
     // MARK: Variables
+    
     var dispatchWorkItem = DispatchWorkItem {}
     var viewModel: Characters.GetCharacters.ViewModel?
     
@@ -35,6 +36,23 @@ class CharactersViewController: UITableViewController {
         return searchController
     }()
     
+    // MARK: Object Life Cycle
+    
+    override init(style: UITableView.Style) {
+        super.init(style: style)
+        setup()
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+    
     // MARK: View lifecycle
     
     override func viewDidLoad() {
@@ -45,8 +63,11 @@ class CharactersViewController: UITableViewController {
     
     // MARK: Private Functions
     
-    private func setupUI() {
+    private func setup() {
         title = "Hérois"
+    }
+    
+    private func setupUI() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.keyboardDismissMode = .interactive
         navigationItem.searchController = searchController
@@ -72,13 +93,6 @@ class CharactersViewController: UITableViewController {
         let request = Characters.SearchCharacters.Request(searchText: searchText)
         self.interactor?.searchCharacters(request: request)
     }
-    
-    private func showAlert(message: String) {
-        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(action)
-        present(alertController, animated: true, completion: nil)
-    }
 }
 
 // MARK: Display Logic
@@ -93,6 +107,7 @@ extension CharactersViewController: CharactersDisplayLogic {
     
     func displayError(_ error: Characters.Error) {
         LoadingView.dismiss()
+        showAlert(message: error.message)
     }
 }
 
@@ -127,8 +142,7 @@ extension CharactersViewController {
         }
         action.isFavorite = displayedCharacter?.isFavorited ?? false
         
-        let swipeActionsConfiguration = UISwipeActionsConfiguration(actions: [action])
-        return swipeActionsConfiguration
+        return UISwipeActionsConfiguration(actions: [action])
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

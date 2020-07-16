@@ -14,13 +14,14 @@ class MainTabBarController: UITabBarController {
     let charactersNavigationController: UINavigationController = {
         let viewController = CharactersFactory.makeController()
         let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.tabBarItem.image = UIImage.init(named: "avengers-icon")
+        navigationController.tabBarItem.image = UIImage(named: "avengers-icon")
         return navigationController
     }()
     
     let favoritesNavigationController: UINavigationController = {
         let viewController = FavoritesFactory.makeController()
         let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.tabBarItem.image = UIImage(named: "star-empty")
         return navigationController
     }()
     
@@ -39,6 +40,7 @@ class MainTabBarController: UITabBarController {
     //MARK: Private Functions
     
     private func setup() {
+        tabBar.tintColor = .red
         viewControllers = [charactersNavigationController, favoritesNavigationController]
     }
     

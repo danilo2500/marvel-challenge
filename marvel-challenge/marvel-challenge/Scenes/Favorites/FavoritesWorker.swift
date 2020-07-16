@@ -11,9 +11,38 @@
 //
 
 import UIKit
+import CoreData
 
 class FavoritesWorker {
-    func doSomeWork()
-    {
+    
+    let coreData = CoreDataManager()
+
+    func getFavoriteCharacters(completion: (Result<[FavoriteCharacterEntity], Error>) -> Void) {
+        let entityName = String(describing: FavoriteCharacterEntity.self)
+        coreData.getAll(entityName: entityName, completion: completion)
+    }
+    
+    func removeCharacterFromFavorite(id: Int, completion: (Error?) -> Void) {
+        getAllFavorites { (result) in
+            switch result {
+            case .success(let favorites):
+                removeAll(favorites: favorites)
+                completion(nil)
+            case .failure(_):
+                completion(NSError())
+            }
+        }
+    }
+    
+    private func getAllFavorites(completion: (Result<[FavoriteCharacterEntity], Error>) -> Void) {
+        let entityName = String(describing: FavoriteCharacterEntity.self)
+        coreData.getAll(entityName: entityName, completion: completion)
+    }
+    
+    private func removeAll(favorites: [FavoriteCharacterEntity]) {
+        for favorite in favorites {
+            coreData.delete(object: favorite, completion: nil)
+        }
+        
     }
 }

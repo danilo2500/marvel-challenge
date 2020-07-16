@@ -29,11 +29,10 @@ class CharactersWorker {
         manager.getCharacters(completion: completion)
     }
     
-    func saveCharacterOnFavorite(name: String, id: Int, image: UIImage, completion: (Error?) -> Void) {
+    func saveCharacterOnFavorite(name: String, id: Int, completion: (Error?) -> Void) {
         let object = FavoriteCharacterEntity()
         object.name = name
         object.id = Int32(id)
-        object.image = image.pngData()
         
         CoreDataManager().save(object: object, completion: completion)
     }
@@ -54,7 +53,8 @@ class CharactersWorker {
     }
     
     func getFavoriteCharacters(completion: (Result<[FavoriteCharacterEntity], Error>) -> Void) {
-        CoreDataManager().getAll(completion: completion)
+        let entityName = String(describing: FavoriteCharacterEntity.self)
+        CoreDataManager().getAll(entityName: entityName, completion: completion)
     }
     
 }

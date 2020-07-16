@@ -58,16 +58,16 @@ enum Characters {
     enum Error {
         case emptyList
         case unexpectedError
-        case databaseError
+        case database
         
-        var description: String {
+        var message: String {
             switch self {
             case .emptyList:
                 return "Não encontramos nenhum héroi"
             case .unexpectedError:
-                return "Um erro inesperado aconteceu"
-            case .databaseError:
-                return "Um erro inesperado aconteceu no banco de dados"
+                return ErrorConstants.unexpectedError
+            case .database:
+                return ErrorConstants.database
             }
         }
     }

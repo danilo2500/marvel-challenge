@@ -16,15 +16,23 @@ enum Favorites {
     
     // MARK: Use cases
     
-    enum Something {
-        struct Request
-        {
+    enum GetFavorites {
+        struct Response {
+            let favorites: [FavoriteCharacterEntity]
         }
-        struct Response
-        {
+        struct ViewModel {
+            var names: [String]
         }
-        struct ViewModel
-        {
+    }
+    
+    enum Error {
+        case database
+        
+        var message: String {
+            switch self {
+                case .database:
+                    return ErrorConstants.database
+            }
         }
     }
 }

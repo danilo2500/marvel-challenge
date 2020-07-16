@@ -15,7 +15,7 @@ import UIKit
 protocol DetailPresentationLogic {
     func presentCharacter(response: Detail.Character.Response)
     func presentImage(response: Detail.GetImage.Response)
-    func presentError()
+    func presentError(_ error: Detail.Error)
 }
 
 class DetailPresenter: DetailPresentationLogic {
@@ -37,7 +37,7 @@ class DetailPresenter: DetailPresentationLogic {
         viewController?.displayImage(viewModel: viewModel)
     }
     
-    func presentError() {
-        viewController?.displayError()
+    func presentError(_ error: Detail.Error) {
+        viewController?.displayError(error)
     }
 }
