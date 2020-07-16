@@ -61,6 +61,13 @@ class CharactersViewController: UITableViewController {
         requestCharacters()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if viewModel != nil {
+            interactor?.getUpdatedFavorites()
+        }
+    }
+    
     // MARK: Private Functions
     
     private func setup() {
@@ -135,9 +142,12 @@ extension CharactersViewController {
             let action = action as! FavoriteContextualAction
             if action.isFavorite {
                 self.removeCharacterFromFavorite(at: indexPath)
+                self.showAlert(message: "Héroi removido dos favoritos")
             } else {
                 self.saveCharacterOnFavorite(at: indexPath)
+                self.showAlert(message: "Héroi adicionado aos favoritos")
             }
+            
             self.interactor?.getUpdatedFavorites()
         }
         action.isFavorite = displayedCharacter?.isFavorited ?? false

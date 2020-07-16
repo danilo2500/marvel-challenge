@@ -48,12 +48,13 @@ class FavoritesInteractor: FavoritesBusinessLogic, FavoritesDataStore {
     }
     
     func removeFavoriteFromDatabase(at indexPath: IndexPath) {
-        favorites.remove(at: indexPath.row)
         let id = Int(favorites[indexPath.row].id)
         worker?.removeCharacterFromFavorite(id: id, completion: { [weak self] (error) in
             guard let self = self else { return }
             if error != nil {
                 self.presenter?.presentError()
+            } else {
+                favorites.remove(at: indexPath.row)
             }
         })
     }

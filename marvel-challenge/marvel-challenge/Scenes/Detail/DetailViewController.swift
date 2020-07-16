@@ -29,6 +29,25 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var starButton: UIButton!
+    
+    // MARK: Variables
+    
+    var viewModel: Detail.Character.ViewModel?
+    
+    // MARK: Computed Propierties
+    
+    var starButtonIsFavorited: Bool = false {
+        didSet {
+            if starButtonIsFavorited {
+                let image = UIImage(named: "star-filled")
+                starButton.setImage(image, for: .normal)
+            } else {
+                let image = UIImage(named: "star-empty")
+                starButton.setImage(image, for: .normal)
+            }
+        }
+    }
     
     // MARK: Object lifecycle
     
@@ -54,6 +73,14 @@ class DetailViewController: UIViewController {
         interactor?.requestImage()
     }
     
+    @IBAction func didTouchStarButton(_ sender: Any) {
+        if starButtonIsFavorited {
+            interactor?.removeCharacterFromFavorite()
+        } else {
+            interactor?.saveCharacterInFavorite()
+        }
+        starButtonIsFavorited.toggle()
+    }
 }
 
 // MARK: Display Logic
@@ -63,6 +90,7 @@ extension DetailViewController: DetailDisplayLogic {
         title = viewModel.name
         nameLabel.text = viewModel.name
         descriptionLabel.text = viewModel.description
+        starButtonIsFavorited = viewModel.isFavorited
     }
     
     func displayImage(viewModel: Detail.GetImage.ViewModel) {

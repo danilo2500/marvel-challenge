@@ -15,6 +15,8 @@ import UIKit
 protocol DetailBusinessLogic {
     func requestCharacter()
     func requestImage()
+    func saveCharacterInFavorite()
+    func removeCharacterFromFavorite()
 }
 
 protocol DetailDataStore {
@@ -74,7 +76,7 @@ class DetailInteractor: DetailBusinessLogic, DetailDataStore {
         }
     }
     
-    func saveCharacterInFavorite(request: Characters.SaveInFavorite.Request) {
+    func saveCharacterInFavorite() {
         guard let name = character?.name, let id = character?.id else {
             self.presenter?.presentError(.unexpectedError)
             return
@@ -88,7 +90,7 @@ class DetailInteractor: DetailBusinessLogic, DetailDataStore {
         }
     }
     
-    func removeCharacterFromFavorite(request: Characters.RemoveFromFavorite.Request) {
+    func removeCharacterFromFavorite() {
         guard let id = character?.id else {
             presenter?.presentError(.unexpectedError)
             return

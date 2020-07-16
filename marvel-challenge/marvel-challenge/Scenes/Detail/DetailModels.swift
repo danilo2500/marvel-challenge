@@ -24,7 +24,7 @@ enum Detail {
         struct ViewModel {
             let name: String
             let description: String
-            let isFavorited: Bool
+            var isFavorited: Bool
         }
     }
     
