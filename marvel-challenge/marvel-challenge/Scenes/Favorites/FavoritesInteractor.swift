@@ -14,7 +14,7 @@ import UIKit
 
 protocol FavoritesBusinessLogic {
     func requestFavorites()
-    func removeFavoriteFromDatabase(at indexPath: IndexPath)
+    func removeFromDatabase(request: Favorites.RemoveFromDatabase.Request)
 }
 
 protocol FavoritesDataStore {
@@ -38,24 +38,39 @@ class FavoritesInteractor: FavoritesBusinessLogic, FavoritesDataStore {
             
             switch result {
             case .success(let favorites):
-                self.favorites = favorites
-                let response = Favorites.GetFavorites.Response(favorites: favorites)
-                self.presenter?.presentFavorites(response: response)
+                handleFavoritesSuccess(favorites: favorites)
             case .failure:
-                self.presenter?.presentError()
+                self.presenter?.presentError(.database)
             }
         }
     }
     
-    func removeFavoriteFromDatabase(at indexPath: IndexPath) {
-        let id = Int(favorites[indexPath.row].id)
+    func removeFromDatabase(request: Favorites.RemoveFromDatabase.Request) {
+        let id = Int(favorites[request.indexPath.row].id)
         worker?.removeCharacterFromFavorite(id: id, completion: { [weak self] (error) in
             guard let self = self else { return }
             if error != nil {
-                self.presenter?.presentError()
+                self.presenter?.presentError(.database)
             } else {
-                favorites.remove(at: indexPath.row)
+                favorites.remove(at: request.indexPath.row)
+                if favorites.isEmpty {
+                    presenter?.presentError(.emptyList)
+                }
+                let response = Favorites.RemoveFromDatabase.Response(indexPath: request.indexPath)
+                self.presenter?.presentRemoveFromDatabase(response: response)
             }
         })
+    }
+    
+    // MARK: Private Functions
+    
+    private func handleFavoritesSuccess(favorites: [FavoriteCharacterEntity]) {
+        self.favorites = favorites
+        if favorites.isEmpty {
+            presenter?.presentError(.emptyList)
+        } else {
+            let response = Favorites.GetFavorites.Response(favorites: favorites)
+            presenter?.presentFavorites(response: response)
+        }
     }
 }

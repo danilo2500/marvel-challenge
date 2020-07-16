@@ -21,17 +21,32 @@ enum Favorites {
             let favorites: [FavoriteCharacterEntity]
         }
         struct ViewModel {
-            var names: [String]
+            let names: [String]
+        }
+    }
+    
+    enum RemoveFromDatabase {
+        struct Request {
+            let indexPath: IndexPath
+        }
+        struct Response {
+            let indexPath: IndexPath
+        }
+        struct ViewModel {
+            let indexPath: IndexPath
         }
     }
     
     enum Error {
         case database
+        case emptyList
         
         var message: String {
             switch self {
-                case .database:
-                    return ErrorConstants.database
+            case .database:
+                return ErrorConstants.database
+            case .emptyList:
+                return "Não há nenhum héroi marcado como favorito"
             }
         }
     }

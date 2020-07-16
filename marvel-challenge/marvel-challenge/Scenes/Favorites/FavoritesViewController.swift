@@ -9,6 +9,7 @@ import UIKit
 
 protocol FavoritesDisplayLogic: AnyObject {
     func displayFavorites(viewModel: Favorites.GetFavorites.ViewModel)
+    func displayRemoveFromDatabase(viewModel: Favorites.RemoveFromDatabase.ViewModel)
     func displayError(_ error: Favorites.Error)
 }
 
@@ -22,8 +23,8 @@ class FavoritesViewController: UITableViewController {
     let cellReuseIdentifier = String(describing: UITableViewCell.self)
     
     // MARK: Variables
-    
-    var viewModel: Favorites.GetFavorites.ViewModel?
+    var error: Favorites.Error?
+    var names: [String] = []
 
     // MARK: Object Life Cycle
     
@@ -51,7 +52,7 @@ class FavoritesViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        interactor?.requestFavorites()
+        requestFavorites()
     }
     
     // MARK: Private Functions
@@ -60,21 +61,46 @@ class FavoritesViewController: UITableViewController {
         title = "Favoritos"
     }
     
+    private func requestFavorites() {
+        tableView.backgroundView = nil
+        interactor?.requestFavorites()
+    }
+    
     private func setupTableView() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        tableView.tableFooterView = UIView()
     }
 }
 
 // MARK: Display Logic
 
 extension FavoritesViewController: FavoritesDisplayLogic {
+    
     func displayFavorites(viewModel: Favorites.GetFavorites.ViewModel) {
-        self.viewModel = viewModel
+        self.names = viewModel.names
         tableView.reloadData()
     }
     
+    func displayRemoveFromDatabase(viewModel: Favorites.RemoveFromDatabase.ViewModel) {
+        names.remove(at: viewModel.indexPath.row)
+        tableView.beginUpdates()
+        tableView.deleteRows(at: [viewModel.indexPath], with: .automatic)
+        tableView.endUpdates()
+    }
+    
     func displayError(_ error: Favorites.Error) {
-        showAlert(message: error.message)
+        self.error = error
+        
+        let alertView = AlertView()
+        alertView.message = error.message
+        alertView.delegate = self
+        switch error {
+        case .emptyList:
+            alertView.buttonTitle = ""
+        case .database:
+            alertView.buttonTitle = "OK"
+        }
+        tableView.backgroundView = alertView
     }
 }
 
@@ -82,13 +108,13 @@ extension FavoritesViewController: FavoritesDisplayLogic {
 
 extension FavoritesViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.names.count ?? 0
+        return names.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
         cell.imageView?.image = UIImage(named: "star-filled")
-        cell.textLabel?.text = viewModel?.names[indexPath.row]
+        cell.textLabel?.text = names[indexPath.row]
         return cell
     }
     
@@ -97,10 +123,20 @@ extension FavoritesViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        viewModel?.names.remove(at: indexPath.row)
-        interactor?.removeFavoriteFromDatabase(at: indexPath)
-        tableView.beginUpdates()
-        tableView.deleteRows(at: [indexPath], with: .automatic)
-        tableView.endUpdates()
+        let request = Favorites.RemoveFromDatabase.Request(indexPath: indexPath)
+        interactor?.removeFromDatabase(request: request)
+    }
+}
+
+extension FavoritesViewController: AlertViewDelegate {
+    func alertView(_ alertView: AlertView, didTouchButton button: UIButton) {
+        guard let error = error else { return }
+        switch error {
+        case .emptyList:
+            break
+        case .database:
+            alertView.removeFromSuperview()
+        }
+        self.error = nil
     }
 }

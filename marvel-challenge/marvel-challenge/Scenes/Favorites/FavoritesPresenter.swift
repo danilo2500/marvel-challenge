@@ -14,7 +14,8 @@ import Foundation
 
 protocol FavoritesPresentationLogic {
     func presentFavorites(response: Favorites.GetFavorites.Response)
-    func presentError()
+    func presentRemoveFromDatabase(response: Favorites.RemoveFromDatabase.Response)
+    func presentError(_ error: Favorites.Error)
 }
 
 class FavoritesPresenter: FavoritesPresentationLogic {
@@ -29,7 +30,12 @@ class FavoritesPresenter: FavoritesPresentationLogic {
         viewController?.displayFavorites(viewModel: viewModel)
     }
     
-    func presentError() {
-        viewController?.displayError(.database)
+    func presentRemoveFromDatabase(response: Favorites.RemoveFromDatabase.Response) {
+        let viewModel = Favorites.RemoveFromDatabase.ViewModel(indexPath: response.indexPath)
+        viewController?.displayRemoveFromDatabase(viewModel: viewModel)
+    }
+    
+    func presentError(_ error: Favorites.Error) {
+        viewController?.displayError(error)
     }
 }
