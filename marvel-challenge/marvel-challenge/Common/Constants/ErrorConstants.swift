@@ -11,4 +11,5 @@ import Foundation
 class ErrorConstants {
     static let unexpectedError = "Um erro inesperado aconteceu"
     static let database = "Um erro inesperado aconteceu no banco de dados"
+    static let notConnectedToInternet = "Sem conexão com internet"
 }

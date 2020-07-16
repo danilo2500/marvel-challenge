@@ -32,6 +32,7 @@ enum Characters {
         }
         struct Response {
             let results: [CharacterModel]
+            let favorites: [FavoriteCharacterEntity]
         }
         struct ViewModel {
             let displayedCharacters: [DisplayedCharacter]
@@ -59,6 +60,7 @@ enum Characters {
         case emptyList
         case unexpectedError
         case database
+        case notConnectedToInternet
         
         var message: String {
             switch self {
@@ -68,6 +70,8 @@ enum Characters {
                 return ErrorConstants.unexpectedError
             case .database:
                 return ErrorConstants.database
+            case .notConnectedToInternet:
+                return ErrorConstants.notConnectedToInternet
             }
         }
     }

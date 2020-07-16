@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D03F2E424BFA8FE00464C4F /* ErrorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D03F2E224BFA78600464C4F /* ErrorConstants.swift */; };
+		1D03F2E624BFE2F100464C4F /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D03F2E524BFE2F100464C4F /* AlertView.swift */; };
 		1D6F65AD24BABD2900F3B5A9 /* RESTErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6F65AC24BABD2900F3B5A9 /* RESTErrors.swift */; };
 		1D6F65AE24BAC2D000F3B5A9 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D71246424BAAC1B0047D53B /* FavoritesPresenter.swift */; };
 		1D6F65AF24BAC2D000F3B5A9 /* FavoritesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D71246224BAAC1A0047D53B /* FavoritesFactory.swift */; };
@@ -93,6 +94,7 @@
 /* Begin PBXFileReference section */
 		0D6C954D979BD96FCAD5C2BE /* Pods-marvel-challengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvel-challengeTests.release.xcconfig"; path = "Target Support Files/Pods-marvel-challengeTests/Pods-marvel-challengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		1D03F2E224BFA78600464C4F /* ErrorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorConstants.swift; sourceTree = "<group>"; };
+		1D03F2E524BFE2F100464C4F /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		1D6F65AC24BABD2900F3B5A9 /* RESTErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTErrors.swift; sourceTree = "<group>"; };
 		1D6F65B724BACD6F00F3B5A9 /* Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
 		1D6F65B924BAD89400F3B5A9 /* MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 				1DB329BC24BB7F49001B4C90 /* MarvelNavigationTitle.swift */,
 				1DB329BE24BBDE1F001B4C90 /* FavoriteContextualAction.swift */,
 				1D8DC87A24BD375D005BA6D0 /* LoadingView.swift */,
+				1D03F2E524BFE2F100464C4F /* AlertView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -764,6 +767,7 @@
 				1D76367324BAA715003F08B3 /* CharactersFactory.swift in Sources */,
 				1D76366D24BAA6C1003F08B3 /* CharactersModels.swift in Sources */,
 				1D6F65B224BAC2D000F3B5A9 /* FavoritesModels.swift in Sources */,
+				1D03F2E624BFE2F100464C4F /* AlertView.swift in Sources */,
 				1D6F65AE24BAC2D000F3B5A9 /* FavoritesPresenter.swift in Sources */,
 				1D6F65B824BACD6F00F3B5A9 /* Timestamp.swift in Sources */,
 				1D71248124BAB69A0047D53B /* SeriesModel.swift in Sources */,

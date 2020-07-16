@@ -71,6 +71,15 @@ class CharactersInteractor: CharactersDataStore {
         self.presenter?.presentCharacters(response: response)
     }
     
+    private func failureRequestCharacters(error: Error) {
+        let nsError = error as NSError
+        if nsError.code  == NSURLErrorNotConnectedToInternet {
+            presenter?.presentError(.notConnectedToInternet)
+        } else {
+            presenter?.presentError(.unexpectedError)
+        }
+    }
+    
     private func getFavorites() {
         worker.getFavoriteCharacters { [weak self] (result) in
             guard let self = self else { return }
@@ -95,8 +104,8 @@ extension CharactersInteractor : CharactersBusinessLogic {
             switch result {
             case .success(let characterDataWrapper):
                 self.successRequestCharacters(characterDataWrapper: characterDataWrapper)
-            case .failure:
-                self.presenter?.presentError(.unexpectedError)
+            case .failure(let error):
+                self.failureRequestCharacters(error: error)
             }
         })
     }
@@ -108,8 +117,12 @@ extension CharactersInteractor : CharactersBusinessLogic {
             searchedCharacters = searchCharacters(allCharacters, with: request.searchText)
         }
         
-        let response = Characters.GetCharacters.Response(results: charactersBeingDisplayed, favorites: favorites)
-        presenter?.presentCharacters(response: response)
+        if searchedCharacters.isEmpty {
+            presenter?.presentError(.emptyList)
+        } else {
+            let response = Characters.searh.Response(results: charactersBeingDisplayed, favorites: favorites)
+            presenter?.presentCharacters(response: response)
+        }
     }
     
     func getUpdatedFavorites() {

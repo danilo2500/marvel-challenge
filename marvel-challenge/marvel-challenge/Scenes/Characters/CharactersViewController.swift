@@ -26,6 +26,7 @@ class CharactersViewController: UITableViewController {
     
     var dispatchWorkItem = DispatchWorkItem {}
     var viewModel: Characters.GetCharacters.ViewModel?
+    var error: Characters.Error?
     
     // MARK: UI Elements
     
@@ -100,6 +101,23 @@ class CharactersViewController: UITableViewController {
         let request = Characters.SearchCharacters.Request(searchText: searchText)
         self.interactor?.searchCharacters(request: request)
     }
+    
+    private func showAlertView(forError error: Characters.Error) {
+        let alertView = AlertView()
+        alertView.message = error.message
+        alertView.delegate = self
+        switch error {
+        case .emptyList:
+            alertView.buttonTitle = ""
+        case .unexpectedError:
+            alertView.buttonTitle = "OK"
+        case .database:
+            alertView.buttonTitle = "OK"
+        case .notConnectedToInternet:
+            alertView.buttonTitle = "Tentar Novamente"
+        }
+        view.addSubview(alertView)
+    }
 }
 
 // MARK: Display Logic
@@ -114,7 +132,8 @@ extension CharactersViewController: CharactersDisplayLogic {
     
     func displayError(_ error: Characters.Error) {
         LoadingView.dismiss()
-        showAlert(message: error.message)
+        self.error = error
+        showAlertView(forError: error)
     }
 }
 
@@ -170,5 +189,23 @@ extension CharactersViewController: UISearchResultsUpdating {
             self.searchCharacters()
         })
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: dispatchWorkItem)
+    }
+}
+
+extension CharactersViewController: AlertViewDelegate {
+    func alertView(_ alertView: AlertView, didTouchButton button: UIButton) {
+        guard let error = error else { return }
+        switch error {
+        case .notConnectedToInternet:
+            requestCharacters()
+            alertView.removeFromSuperview()
+        case .emptyList:
+            break
+        case .unexpectedError:
+            alertView.removeFromSuperview()
+        case .database:
+            alertView.removeFromSuperview()
+        }
+        self.error = nil
     }
 }
